@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices/">
+
+<xs:element name="asignarMina" type="tns:asignarMina"/>
+
+<xs:element name="asignarMinaResponse" type="tns:asignarMinaResponse"/>
+
+<xs:element name="asignarRecursos" type="tns:asignarRecursos"/>
+
+<xs:element name="asignarRecursosResponse" type="tns:asignarRecursosResponse"/>
+
+<xs:element name="mina" type="tns:mina"/>
+
+<xs:element name="recurso" type="tns:recurso"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="asignarMina">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarMinaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:mina" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mina">
+<xs:sequence>
+<xs:element name="deposito" type="xs:int"/>
+<xs:element name="FKMinaRecurso" type="tns:recurso" minOccurs="0"/>
+<xs:element name="FKMinaUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idMina" type="xs:int" minOccurs="0"/>
+<xs:element name="nivelMina" type="xs:int"/>
+<xs:element name="tipoMina" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="recurso">
+<xs:sequence>
+<xs:element name="FKUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idRecurso" type="xs:int" minOccurs="0"/>
+<xs:element name="tipoRecurso" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarRecursos">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarRecursosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

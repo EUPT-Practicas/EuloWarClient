@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-ServiceRegistroAutenticacion" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" destdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServiceRegistroAutenticacion/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL" xnocompile="true" xendorsed="true" package="clientes_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServiceRegistroAutenticacion/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServiceRegistroAutenticacion" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/clientes_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
+    </target>
+    <target name="wsimport-client-AsignarRecursosInicio" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" destdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" xnocompile="true" xendorsed="true" package="asignarRecursos_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AsignarRecursosInicio" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/asignarRecursos_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+    </target>
+    <target name="wsimport-client-OperacionesMinas" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OperacionesMinas"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OperacionesMinas" destdir="${build.generated.dir}/jax-wsCache/OperacionesMinas" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL" xnocompile="true" xendorsed="true" package="operacionesminas_client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OperacionesMinas"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OperacionesMinas">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OperacionesMinas" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/operacionesminas_client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OperacionesMinas"/>
+    </target>
+    <target name="wsimport-client-OperacionesRecursos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OperacionesRecursos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OperacionesRecursos" destdir="${build.generated.dir}/jax-wsCache/OperacionesRecursos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesRecursos/wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?WSDL" xnocompile="true" xendorsed="true" package="operacionesRecursos_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesRecursos/wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OperacionesRecursos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OperacionesRecursos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OperacionesRecursos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/operacionesRecursos_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OperacionesRecursos"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos"/>
+</project>

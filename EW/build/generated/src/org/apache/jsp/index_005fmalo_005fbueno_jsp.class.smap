@@ -1,0 +1,14 @@
+SMAP
+index_005fmalo_005fbueno_jsp.java
+JSP
+*S JSP
+*F
++ 0 index_malo_bueno.jsp
+index_malo_bueno.jsp
++ 1 footer.jsp
+footer.jsp
+*L
+5,115:49
+5#1,11:164
+119#0,12:174
+*E

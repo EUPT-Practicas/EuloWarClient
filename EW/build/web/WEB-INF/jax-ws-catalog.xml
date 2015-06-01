@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://155.210.68.154:8080/pruebaBean/pruebaBean?wsdl" uri="wsdl/155.210.68.154_8080/pruebaBean/pruebaBean.wsdl"/>
+    <system systemId="http://155.210.68.154:8080/pruebaBean/pruebaBean?xsd=1" uri="wsdl/155.210.68.154_8080/pruebaBean/pruebaBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL" uri="wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl"/>
+    <system systemId="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?xsd=1" uri="wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" uri="wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
+    <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?WSDL" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.wsdl"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL" uri="wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?WSDL" uri="wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl"/>
+    <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?xsd=1" uri="wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.xsd_1.xsd"/>
+</catalog>
