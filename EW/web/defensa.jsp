@@ -25,6 +25,7 @@
                         <h5><strong>Nivel: 5</strong></h5>
                 </div> 
                 <div class="col-md-5 col-md-offset-0">
+                    </br>
                      <img src="img/defensa/rambo.png" class="img-responsive " alt="Responsive image">
                 </div>
                 <div class="row">
@@ -45,6 +46,26 @@
                         </div>
                         <div class="row">
                             <h5 class="">Coste de mejora: 5.000 Hierro</h5>
+                        </div>
+                        <div class="row text-center">
+                            <h5 class=""><b>Nº Tropas adquiridas:</b> 55</h5>
+                        </div>
+                        
+                        <div class="panel col-md-9 col-md-offset-1">
+                            <div class="col-md-6 col-md-offset-0">
+                                <div class="input-group number-spinner">
+                                    <span class="input-group-btn data-dwn">
+                                            <button class="btn btn-primary" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                    </span>
+                                    <input type="text" class="form-control text-center" value="1" min="1" max="40">
+                                    <span class="input-group-btn data-up">
+                                            <button class="btn btn-primary " data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-md-offset-0">
+                                <button type="button" class="btn btn-primary col-md-12 ">Comprar</button>
+                            </div>
                         </div>
                     </div>
                     <!--<div class="col-md-1 col-md-offset-0 text-right">
@@ -98,6 +119,7 @@
         </footer>
         <!-- Librería jQuery requerida por los plugins de JavaScript -->
         <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="./js/myJavaScript.js"></script>
 
         <!-- Todos los plugins JavaScript de Bootstrap (también puedes
              incluir archivos JavaScript individuales de los únicos
