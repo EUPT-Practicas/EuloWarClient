@@ -57,7 +57,7 @@
                                     <span class="input-group-btn data-dwn">
                                             <button class="btn btn-primary" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                                     </span>
-                                    <input type="text" class="form-control text-center" value="1" min="1" max="40">
+                                    <input type="text" class="form-control text-center" value="1" min="1" max="40" readonly>
                                     <span class="input-group-btn data-up">
                                             <button class="btn btn-primary " data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                                     </span>

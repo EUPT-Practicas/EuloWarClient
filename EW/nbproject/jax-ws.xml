@@ -74,42 +74,6 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="OperacionesMinas">
-      <wsdl-url>http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">operacionesminas_client</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>operacionesminas_client</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="OperacionesRecursos">
       <wsdl-url>http://localhost:8080/OperacionesRecursos/OperacionesRecursos?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl</local-wsdl-file>
@@ -143,6 +107,78 @@
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
           <wsimport-option-value>operacionesRecursos_WS</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="OperacionesMinas">
+      <wsdl-url>http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/OperacionesMinas/OperacionesMinas.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">operacionesminas_client</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>operacionesminas_client</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="GestionPerfilUsuario">
+      <wsdl-url>http://localhost:8080/GestionPerfilUsuario/GestionPerfilUsuario?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/GestionPerfilUsuario/GestionPerfilUsuario.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">gestionperfil_WS</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/GestionPerfilUsuario/GestionPerfilUsuario?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>gestionperfil_WS</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

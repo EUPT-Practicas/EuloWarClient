@@ -4,6 +4,7 @@
     Author     : Sergio
 --%>
 
+<%@page import="operacionesminas_client.Mina"%>
 <%@page import="operacionesminas_client.NivelMina"%>
 <%@page import="cliente_webservice.ClienteRecursosMinas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -65,10 +66,16 @@
 </div> 
 
 <div class="row col-md-2  col-md-offset-10 ">
-    <%if (Integer.valueOf(nivelActualmina) <= 5) {%>
-    <a onclick="">
+    <%if (Integer.valueOf(nivelActualmina) <= 5){%>
+    <a onclick="mejorarMina(<%= idMina%>);">
         <button type="button" class="btn btn-primary col-md-12 " id="save">Mejorar</button>
-    </a> <%} //else {%>
+    </a> 
+<!--    <form action="MejorarMina" method="POST">
+        <input type="hidden" name="idMina">
+    </form>-->
+    
+    
+    <%} //else {%>
 <!--    <a onclick="">
         <button type="button" class="btn btn-danger col-md-12 " id="save" disabled="">Mejorar</button>
     </a>-->

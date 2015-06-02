@@ -12,4 +12,8 @@
     <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?WSDL" uri="wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl"/>
     <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?xsd=1" uri="wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL" uri="wsdl/localhost_8080/OperacionesMinas/OperacionesMinas.wsdl"/>
+    <system systemId="http://localhost:8080/OperacionesMinas/OperacionesMinas?xsd=1" uri="wsdl/localhost_8080/OperacionesMinas/OperacionesMinas.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/GestionPerfilUsuario/GestionPerfilUsuario?WSDL" uri="wsdl/localhost_8080/GestionPerfilUsuario/GestionPerfilUsuario.wsdl"/>
+    <system systemId="http://localhost:8080/GestionPerfilUsuario/GestionPerfilUsuario?xsd=1" uri="wsdl/localhost_8080/GestionPerfilUsuario/GestionPerfilUsuario.xsd_1.xsd"/>
 </catalog>

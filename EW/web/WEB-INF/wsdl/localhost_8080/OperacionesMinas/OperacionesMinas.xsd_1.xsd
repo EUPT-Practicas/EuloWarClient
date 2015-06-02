@@ -4,6 +4,10 @@
 
 <xs:element name="asignarMinaResponse" type="tns:asignarMinaResponse"/>
 
+<xs:element name="getMina" type="tns:getMina"/>
+
+<xs:element name="getMinaResponse" type="tns:getMinaResponse"/>
+
 <xs:element name="mejorarMina" type="tns:mejorarMina"/>
 
 <xs:element name="mejorarMinaResponse" type="tns:mejorarMinaResponse"/>
@@ -28,13 +32,13 @@
 
 <xs:element name="usuario" type="tns:usuario"/>
 
-<xs:complexType name="asignarMina">
+<xs:complexType name="getMina">
 <xs:sequence>
-<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="idMina" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="asignarMinaResponse">
+<xs:complexType name="getMinaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:mina" minOccurs="0"/>
 </xs:sequence>
@@ -66,6 +70,18 @@
 <xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarMina">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarMinaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:mina" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

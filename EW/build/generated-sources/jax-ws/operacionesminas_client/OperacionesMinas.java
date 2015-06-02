@@ -57,6 +57,21 @@ public interface OperacionesMinas {
 
     /**
      * 
+     * @param idMina
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "mejorarMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.MejorarMina")
+    @ResponseWrapper(localName = "mejorarMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.MejorarMinaResponse")
+    @Action(input = "http://webservices/OperacionesMinas/mejorarMinaRequest", output = "http://webservices/OperacionesMinas/mejorarMinaResponse")
+    public boolean mejorarMina(
+        @WebParam(name = "idMina", targetNamespace = "")
+        int idMina);
+
+    /**
+     * 
      * @param emailUsuario
      * @return
      *     returns operacionesminas_client.Mina
@@ -89,14 +104,14 @@ public interface OperacionesMinas {
      * 
      * @param idMina
      * @return
-     *     returns boolean
+     *     returns operacionesminas_client.Mina
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "mejorarMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.MejorarMina")
-    @ResponseWrapper(localName = "mejorarMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.MejorarMinaResponse")
-    @Action(input = "http://webservices/OperacionesMinas/mejorarMinaRequest", output = "http://webservices/OperacionesMinas/mejorarMinaResponse")
-    public boolean mejorarMina(
+    @RequestWrapper(localName = "getMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMina")
+    @ResponseWrapper(localName = "getMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMinaResponse")
+    @Action(input = "http://webservices/OperacionesMinas/getMinaRequest", output = "http://webservices/OperacionesMinas/getMinaResponse")
+    public Mina getMina(
         @WebParam(name = "idMina", targetNamespace = "")
         int idMina);
 

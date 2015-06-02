@@ -17,11 +17,49 @@
         <nav>
             <%@ include file='nav.jsp' %>
         </nav>
-        
 
         <div class="row">
-            <center><h2>P R E F E R E N C I A S</h2></center>
+            <h2 class="text-center">Preferencias</h2>
+        </div>
+        <div class="panel panel-default col-md-4 col-md-offset-2">
+            </br>
+            <h5 class="text-center"><b>Cambiar contraseña</b></h5></br>
+            <div class="form-group">
+                <label for="ejemplo_password_1">Contraseña actual</label>
+                <input type="password" class="form-control" name="password" id="ejemplo_password_1" 
+                       placeholder="Contraseña">
             </div>
+            <div class="form-group">
+                <label for="ejemplo_password_1">Nueva contraseña</label>
+                <input type="password" class="form-control" name="password" id="ejemplo_password_1" 
+                       placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <label for="ejemplo_password_1">Repita nueva contraseña</label>
+                <input type="password" class="form-control" name="password" id="ejemplo_password_1" 
+                       placeholder="Contraseña">
+            </div>
+            <button type="button" class="btn btn-primary col-md-10 col-md-offset-1">Cambiar</button>
+            </br>
+            </br>
+            </br>
+        </div>
+        
+        <div class="panel panel-default col-md-4 col-md-offset-0">
+                        </br>
+                        <h5 class="text-center"><b>Cerrar cuenta</b></h5></br>
+            <div class="row col-md-10 col-md-offset-1">
+                <h5>Usted puede dar de baja su cuenta pulsando el siguiente boton.</h5>
+                <button type="button" class="btn btn-primary col-md-12 ">Eliminar Cuenta</button>
+                            </br>
+            </br>
+            </br>
+            </div>
+
+        </div>
+        
+        <div class="container">
+        </div>
 
 
         <footer class="container">

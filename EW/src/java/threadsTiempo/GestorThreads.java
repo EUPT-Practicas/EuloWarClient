@@ -33,4 +33,8 @@ public class GestorThreads {
         poolThreads.execute(new RecursosMina(m));
     }
     
+    public void crearThreadMejoraMina(int idMina){
+        poolThreads.execute(new MejoraMina(idMina));
+    }
+    
 }

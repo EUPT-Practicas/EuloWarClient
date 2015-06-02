@@ -24,16 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetMinaResponse_QNAME = new QName("http://webservices/", "getMinaResponse");
     private final static QName _Recurso_QNAME = new QName("http://webservices/", "recurso");
     private final static QName _ObtenerMinasResponse_QNAME = new QName("http://webservices/", "obtenerMinasResponse");
     private final static QName _ProducirRecursos_QNAME = new QName("http://webservices/", "producirRecursos");
     private final static QName _AsignarMina_QNAME = new QName("http://webservices/", "asignarMina");
+    private final static QName _GetMina_QNAME = new QName("http://webservices/", "getMina");
     private final static QName _AsignarMinaResponse_QNAME = new QName("http://webservices/", "asignarMinaResponse");
     private final static QName _ObtenerNivelMina_QNAME = new QName("http://webservices/", "obtenerNivelMina");
     private final static QName _MejorarMinaResponse_QNAME = new QName("http://webservices/", "mejorarMinaResponse");
     private final static QName _ObtenerMinas_QNAME = new QName("http://webservices/", "obtenerMinas");
-    private final static QName _Mina_QNAME = new QName("http://webservices/", "mina");
     private final static QName _MejorarMina_QNAME = new QName("http://webservices/", "mejorarMina");
+    private final static QName _Mina_QNAME = new QName("http://webservices/", "mina");
     private final static QName _ProducirRecursosResponse_QNAME = new QName("http://webservices/", "producirRecursosResponse");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
     private final static QName _NivelMina_QNAME = new QName("http://webservices/", "nivelMina");
@@ -44,22 +46,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link AsignarMinaResponse }
-     * 
-     */
-    public AsignarMinaResponse createAsignarMinaResponse() {
-        return new AsignarMinaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerNivelMina }
-     * 
-     */
-    public ObtenerNivelMina createObtenerNivelMina() {
-        return new ObtenerNivelMina();
     }
 
     /**
@@ -95,11 +81,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AsignarMina }
+     * Create an instance of {@link MejorarMina }
      * 
      */
-    public AsignarMina createAsignarMina() {
-        return new AsignarMina();
+    public MejorarMina createMejorarMina() {
+        return new MejorarMina();
     }
 
     /**
@@ -111,35 +97,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MejorarMina }
-     * 
-     */
-    public MejorarMina createMejorarMina() {
-        return new MejorarMina();
-    }
-
-    /**
-     * Create an instance of {@link ProducirRecursos }
-     * 
-     */
-    public ProducirRecursos createProducirRecursos() {
-        return new ProducirRecursos();
-    }
-
-    /**
      * Create an instance of {@link ObtenerMinas }
      * 
      */
     public ObtenerMinas createObtenerMinas() {
         return new ObtenerMinas();
-    }
-
-    /**
-     * Create an instance of {@link ObtenerMinasResponse }
-     * 
-     */
-    public ObtenerMinasResponse createObtenerMinasResponse() {
-        return new ObtenerMinasResponse();
     }
 
     /**
@@ -151,11 +113,76 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AsignarMinaResponse }
+     * 
+     */
+    public AsignarMinaResponse createAsignarMinaResponse() {
+        return new AsignarMinaResponse();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerNivelMina }
+     * 
+     */
+    public ObtenerNivelMina createObtenerNivelMina() {
+        return new ObtenerNivelMina();
+    }
+
+    /**
+     * Create an instance of {@link AsignarMina }
+     * 
+     */
+    public AsignarMina createAsignarMina() {
+        return new AsignarMina();
+    }
+
+    /**
+     * Create an instance of {@link GetMina }
+     * 
+     */
+    public GetMina createGetMina() {
+        return new GetMina();
+    }
+
+    /**
+     * Create an instance of {@link ProducirRecursos }
+     * 
+     */
+    public ProducirRecursos createProducirRecursos() {
+        return new ProducirRecursos();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerMinasResponse }
+     * 
+     */
+    public ObtenerMinasResponse createObtenerMinasResponse() {
+        return new ObtenerMinasResponse();
+    }
+
+    /**
      * Create an instance of {@link Recurso }
      * 
      */
     public Recurso createRecurso() {
         return new Recurso();
+    }
+
+    /**
+     * Create an instance of {@link GetMinaResponse }
+     * 
+     */
+    public GetMinaResponse createGetMinaResponse() {
+        return new GetMinaResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMinaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "getMinaResponse")
+    public JAXBElement<GetMinaResponse> createGetMinaResponse(GetMinaResponse value) {
+        return new JAXBElement<GetMinaResponse>(_GetMinaResponse_QNAME, GetMinaResponse.class, null, value);
     }
 
     /**
@@ -195,6 +222,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMina }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "getMina")
+    public JAXBElement<GetMina> createGetMina(GetMina value) {
+        return new JAXBElement<GetMina>(_GetMina_QNAME, GetMina.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AsignarMinaResponse }{@code >}}
      * 
      */
@@ -231,21 +267,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Mina }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices/", name = "mina")
-    public JAXBElement<Mina> createMina(Mina value) {
-        return new JAXBElement<Mina>(_Mina_QNAME, Mina.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link MejorarMina }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservices/", name = "mejorarMina")
     public JAXBElement<MejorarMina> createMejorarMina(MejorarMina value) {
         return new JAXBElement<MejorarMina>(_MejorarMina_QNAME, MejorarMina.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Mina }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "mina")
+    public JAXBElement<Mina> createMina(Mina value) {
+        return new JAXBElement<Mina>(_Mina_QNAME, Mina.class, null, value);
     }
 
     /**

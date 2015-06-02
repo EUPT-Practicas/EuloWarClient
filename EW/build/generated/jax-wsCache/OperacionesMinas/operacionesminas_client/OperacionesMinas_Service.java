@@ -17,48 +17,48 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ProducirRecursosMina", targetNamespace = "http://webservices/", wsdlLocation = "http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL")
-public class ProducirRecursosMina
+@WebServiceClient(name = "OperacionesMinas", targetNamespace = "http://webservices/", wsdlLocation = "http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL")
+public class OperacionesMinas_Service
     extends Service
 {
 
-    private final static URL PRODUCIRRECURSOSMINA_WSDL_LOCATION;
-    private final static WebServiceException PRODUCIRRECURSOSMINA_EXCEPTION;
-    private final static QName PRODUCIRRECURSOSMINA_QNAME = new QName("http://webservices/", "ProducirRecursosMina");
+    private final static URL OPERACIONESMINAS_WSDL_LOCATION;
+    private final static WebServiceException OPERACIONESMINAS_EXCEPTION;
+    private final static QName OPERACIONESMINAS_QNAME = new QName("http://webservices/", "OperacionesMinas");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL");
+            url = new URL("http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
-        PRODUCIRRECURSOSMINA_WSDL_LOCATION = url;
-        PRODUCIRRECURSOSMINA_EXCEPTION = e;
+        OPERACIONESMINAS_WSDL_LOCATION = url;
+        OPERACIONESMINAS_EXCEPTION = e;
     }
 
-    public ProducirRecursosMina() {
-        super(__getWsdlLocation(), PRODUCIRRECURSOSMINA_QNAME);
+    public OperacionesMinas_Service() {
+        super(__getWsdlLocation(), OPERACIONESMINAS_QNAME);
     }
 
-    public ProducirRecursosMina(WebServiceFeature... features) {
-        super(__getWsdlLocation(), PRODUCIRRECURSOSMINA_QNAME, features);
+    public OperacionesMinas_Service(WebServiceFeature... features) {
+        super(__getWsdlLocation(), OPERACIONESMINAS_QNAME, features);
     }
 
-    public ProducirRecursosMina(URL wsdlLocation) {
-        super(wsdlLocation, PRODUCIRRECURSOSMINA_QNAME);
+    public OperacionesMinas_Service(URL wsdlLocation) {
+        super(wsdlLocation, OPERACIONESMINAS_QNAME);
     }
 
-    public ProducirRecursosMina(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, PRODUCIRRECURSOSMINA_QNAME, features);
+    public OperacionesMinas_Service(URL wsdlLocation, WebServiceFeature... features) {
+        super(wsdlLocation, OPERACIONESMINAS_QNAME, features);
     }
 
-    public ProducirRecursosMina(URL wsdlLocation, QName serviceName) {
+    public OperacionesMinas_Service(URL wsdlLocation, QName serviceName) {
         super(wsdlLocation, serviceName);
     }
 
-    public ProducirRecursosMina(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+    public OperacionesMinas_Service(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
         super(wsdlLocation, serviceName, features);
     }
 
@@ -85,10 +85,10 @@ public class ProducirRecursosMina
     }
 
     private static URL __getWsdlLocation() {
-        if (PRODUCIRRECURSOSMINA_EXCEPTION!= null) {
-            throw PRODUCIRRECURSOSMINA_EXCEPTION;
+        if (OPERACIONESMINAS_EXCEPTION!= null) {
+            throw OPERACIONESMINAS_EXCEPTION;
         }
-        return PRODUCIRRECURSOSMINA_WSDL_LOCATION;
+        return OPERACIONESMINAS_WSDL_LOCATION;
     }
 
 }
