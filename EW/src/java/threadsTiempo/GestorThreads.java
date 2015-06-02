@@ -29,7 +29,7 @@ public class GestorThreads {
         return instancia;
     }
     
-    public void crearThread(Mina m){
+    public void crearThreadRecursosMina(Mina m){
         poolThreads.execute(new RecursosMina(m));
     }
     

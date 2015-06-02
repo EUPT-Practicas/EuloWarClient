@@ -30,15 +30,15 @@
                 });
             }
 
-            function setIdMina(_idMina, _nivelM) {
+            function setInfoMina(_idMina, _nivelM) {
 
                 $.ajax({
                     type: "POST",
-                    url: "getInfoMina.jsp",
+                    url: "infoMina.jsp",
                     data: "IdMina=" + _idMina + "&nivelM=" + _nivelM,
                     success: function (msg) {
-                        $('#output').empty();
-                        $('#output').html(msg);
+                        $('#infoMina').empty();
+                        $('#infoMina').html(msg);
                     }
                 });
             }
@@ -55,7 +55,7 @@
         </nav>
         <div class="row">
 
-            <div class="panel panel-default col-md-10 col-md-offset-1" id="output">
+            <div class="panel panel-default col-md-10 col-md-offset-1" id="infoMina">
                 <center><h1>No hay mina seleccionada.</h1></center>
                 <!--                <div class="col-md-1 col-md-offset-11 text-right">
                                     <h5 ><strong id="nivelMina">Nivel:</strong></h5>
@@ -128,7 +128,7 @@
                         int iden = mina.getIdMina();
                 %>
                 <div class="col-md-2 col-md-offset-0">
-                    <a href="#" onclick="setIdMina(<%= iden%>, <%= nivel%>);">
+                    <a href="#" onclick="setInfoMina(<%= iden%>, <%= nivel%>);">
                         <img src="img/minas/hierro1.png" class="img-responsive" alt="Responsive image">
                         <h5 class="text-center">Nivel: <%= nivel%> </h5>
                     </a>

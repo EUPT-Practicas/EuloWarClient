@@ -67,7 +67,7 @@ public class Alta extends HttpServlet {
                         System.out.println("asignados mina y recursos");
 
                         GestorThreads g = GestorThreads.getInstance();
-                        g.crearThread(m);
+                        g.crearThreadRecursosMina(m);
 
                         HttpSession nuevaSesion = request.getSession();
                         nuevaSesion.setAttribute("usuario", usuario);
