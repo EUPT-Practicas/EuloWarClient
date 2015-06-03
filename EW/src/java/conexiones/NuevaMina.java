@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import operacionesminas_client.Mina;
+import threadsTiempo.GestorThreads;
 
 /**
  *
@@ -83,12 +84,14 @@ public class NuevaMina extends HttpServlet {
 
         ClienteRecursosMinas crm = new ClienteRecursosMinas();
         Mina nuevaMina = crm.asignarMina(email);
+        GestorThreads g = GestorThreads.getInstance();
+        g.crearThreadRecursosMina(nuevaMina);
 
         int idMina = nuevaMina.getIdMina();
         String nivelActualmina = "" + nuevaMina.getNivelMina();
 
         System.err.println("nivel NUEVA MINA: " + nivelActualmina);
-        
+
         response.sendRedirect("minas.jsp");
 
     }

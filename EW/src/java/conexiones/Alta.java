@@ -6,7 +6,8 @@
 package conexiones;
 
 import Utilidades.EncriptaMD5;
-import asignarRecursos_WS.Mina;
+import operacionesminas_client.Mina;
+import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteRegistroAuth;
 import clientes_WS.Usuario;
 import java.io.IOException;
@@ -41,6 +42,7 @@ public class Alta extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
 
             ClienteRegistroAuth cra = new ClienteRegistroAuth();
+            ClienteRecursosMinas crm = new ClienteRecursosMinas();
 
             boolean exitoRegistro = false;
             boolean exitoRecursos = false;
@@ -61,7 +63,7 @@ public class Alta extends HttpServlet {
                 exitoRegistro = cra.crearUsuario(email, nombreUsuario, passEncript);
                 if (exitoRegistro) {
                     exitoRecursos = cra.asignarRecursos(email);
-                    Mina m = cra.asignarMina(email);
+                    Mina m = crm.asignarMina(email);
                     if (exitoRecursos) {
                         usuario = (Usuario) cra.findUser(nombreUsuario);
                         System.out.println("asignados mina y recursos");

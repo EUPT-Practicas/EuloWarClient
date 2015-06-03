@@ -5,7 +5,7 @@
  */
 package threadsTiempo;
 
-import asignarRecursos_WS.Mina;
+import operacionesminas_client.Mina;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,6 +30,7 @@ public class GestorThreads {
     }
     
     public void crearThreadRecursosMina(Mina m){
+        System.out.println("CREANDO UN THREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD!!!!");
         poolThreads.execute(new RecursosMina(m));
     }
     
