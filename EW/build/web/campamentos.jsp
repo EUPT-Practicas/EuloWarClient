@@ -69,6 +69,11 @@
                 </br></br>
                 
                 <div class="col-md-2 col-md-offset-0">
+                    <img src="img/campamento/mejorarCampamento.png" class="img-responsive" alt="Responsive image">
+                    <h5 class="text-center">Mejorar campamento </h5>
+                </div>
+                
+                <div class="col-md-2 col-md-offset-0">
                     <img src="img/campamento/ArmyCamp.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>

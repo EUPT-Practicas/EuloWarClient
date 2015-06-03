@@ -88,7 +88,12 @@
             </div>
             <div class="panel panel-default col-md-10 col-md-offset-1">
                 </br></br>
-                <div class="col-md-1 col-md-offset-0"></div>
+                <div class="col-md-0 col-md-offset-0"></div>
+                
+                <div class="col-md-2 col-md-offset-0">
+                    <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">
+                    <h5 class="text-center">Mejorar defensas </h5>
+                </div>
                 
                 <div class="col-md-2 col-md-offset-0">
                     <img src="img/defensa/tedax.png" class="img-responsive" alt="Responsive image">
