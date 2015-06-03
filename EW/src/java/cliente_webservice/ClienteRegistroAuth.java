@@ -48,6 +48,12 @@ public class ClienteRegistroAuth {
         return port.findUser(nomUsuario);
     }
 
+    public boolean existeUsuario(java.lang.String email) {
+        clientes_WS.ServiceRegistroAutenticacion_Service service = new clientes_WS.ServiceRegistroAutenticacion_Service();
+        clientes_WS.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
+        return port.existeUsuario(email);
+    }
+
     
   
 }

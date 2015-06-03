@@ -27,6 +27,24 @@ public interface OperacionesRecursos {
     /**
      * 
      * @param email
+     * @param unidades
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "restarRecursos", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.RestarRecursos")
+    @ResponseWrapper(localName = "restarRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.RestarRecursosResponse")
+    @Action(input = "http://webservices/OperacionesRecursos/restarRecursosRequest", output = "http://webservices/OperacionesRecursos/restarRecursosResponse")
+    public String restarRecursos(
+        @WebParam(name = "unidades", targetNamespace = "")
+        int unidades,
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
+     * @param email
      * @return
      *     returns java.lang.Integer
      */
@@ -52,24 +70,6 @@ public interface OperacionesRecursos {
     @ResponseWrapper(localName = "sumarRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.SumarRecursosResponse")
     @Action(input = "http://webservices/OperacionesRecursos/sumarRecursosRequest", output = "http://webservices/OperacionesRecursos/sumarRecursosResponse")
     public boolean sumarRecursos(
-        @WebParam(name = "unidades", targetNamespace = "")
-        int unidades,
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
-
-    /**
-     * 
-     * @param email
-     * @param unidades
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "restarRecursos", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.RestarRecursos")
-    @ResponseWrapper(localName = "restarRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.RestarRecursosResponse")
-    @Action(input = "http://webservices/OperacionesRecursos/restarRecursosRequest", output = "http://webservices/OperacionesRecursos/restarRecursosResponse")
-    public String restarRecursos(
         @WebParam(name = "unidades", targetNamespace = "")
         int unidades,
         @WebParam(name = "email", targetNamespace = "")

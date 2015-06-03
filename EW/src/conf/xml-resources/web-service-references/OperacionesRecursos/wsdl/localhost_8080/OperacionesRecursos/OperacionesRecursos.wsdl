@@ -4,6 +4,12 @@
 <xsd:import namespace="http://webservices/" schemaLocation="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="restarRecursos">
+<part name="parameters" element="tns:restarRecursos"/>
+</message>
+<message name="restarRecursosResponse">
+<part name="parameters" element="tns:restarRecursosResponse"/>
+</message>
 <message name="obtenerRecursos">
 <part name="parameters" element="tns:obtenerRecursos"/>
 </message>
@@ -16,13 +22,11 @@
 <message name="sumarRecursosResponse">
 <part name="parameters" element="tns:sumarRecursosResponse"/>
 </message>
-<message name="restarRecursos">
-<part name="parameters" element="tns:restarRecursos"/>
-</message>
-<message name="restarRecursosResponse">
-<part name="parameters" element="tns:restarRecursosResponse"/>
-</message>
 <portType name="OperacionesRecursos">
+<operation name="restarRecursos">
+<input wsam:Action="http://webservices/OperacionesRecursos/restarRecursosRequest" message="tns:restarRecursos"/>
+<output wsam:Action="http://webservices/OperacionesRecursos/restarRecursosResponse" message="tns:restarRecursosResponse"/>
+</operation>
 <operation name="obtenerRecursos">
 <input wsam:Action="http://webservices/OperacionesRecursos/obtenerRecursosRequest" message="tns:obtenerRecursos"/>
 <output wsam:Action="http://webservices/OperacionesRecursos/obtenerRecursosResponse" message="tns:obtenerRecursosResponse"/>
@@ -31,13 +35,18 @@
 <input wsam:Action="http://webservices/OperacionesRecursos/sumarRecursosRequest" message="tns:sumarRecursos"/>
 <output wsam:Action="http://webservices/OperacionesRecursos/sumarRecursosResponse" message="tns:sumarRecursosResponse"/>
 </operation>
-<operation name="restarRecursos">
-<input wsam:Action="http://webservices/OperacionesRecursos/restarRecursosRequest" message="tns:restarRecursos"/>
-<output wsam:Action="http://webservices/OperacionesRecursos/restarRecursosResponse" message="tns:restarRecursosResponse"/>
-</operation>
 </portType>
 <binding name="OperacionesRecursosPortBinding" type="tns:OperacionesRecursos">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="restarRecursos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="obtenerRecursos">
 <soap:operation soapAction=""/>
 <input>
@@ -48,15 +57,6 @@
 </output>
 </operation>
 <operation name="sumarRecursos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="restarRecursos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

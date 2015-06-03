@@ -27,16 +27,26 @@ public class ObjectFactory {
     private final static QName _FindUserResponse_QNAME = new QName("http://webservices/", "findUserResponse");
     private final static QName _ComprobarLoginResponse_QNAME = new QName("http://webservices/", "comprobarLoginResponse");
     private final static QName _FindUser_QNAME = new QName("http://webservices/", "findUser");
+    private final static QName _ExisteUsuario_QNAME = new QName("http://webservices/", "existeUsuario");
     private final static QName _ComprobarLogin_QNAME = new QName("http://webservices/", "comprobarLogin");
     private final static QName _CrearUsuario_QNAME = new QName("http://webservices/", "crearUsuario");
     private final static QName _CrearUsuarioResponse_QNAME = new QName("http://webservices/", "crearUsuarioResponse");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
+    private final static QName _ExisteUsuarioResponse_QNAME = new QName("http://webservices/", "existeUsuarioResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: clientes_WS
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ExisteUsuarioResponse }
+     * 
+     */
+    public ExisteUsuarioResponse createExisteUsuarioResponse() {
+        return new ExisteUsuarioResponse();
     }
 
     /**
@@ -77,6 +87,14 @@ public class ObjectFactory {
      */
     public FindUser createFindUser() {
         return new FindUser();
+    }
+
+    /**
+     * Create an instance of {@link ExisteUsuario }
+     * 
+     */
+    public ExisteUsuario createExisteUsuario() {
+        return new ExisteUsuario();
     }
 
     /**
@@ -123,6 +141,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExisteUsuario }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "existeUsuario")
+    public JAXBElement<ExisteUsuario> createExisteUsuario(ExisteUsuario value) {
+        return new JAXBElement<ExisteUsuario>(_ExisteUsuario_QNAME, ExisteUsuario.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ComprobarLogin }{@code >}}
      * 
      */
@@ -156,6 +183,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "usuario")
     public JAXBElement<Usuario> createUsuario(Usuario value) {
         return new JAXBElement<Usuario>(_Usuario_QNAME, Usuario.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExisteUsuarioResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "existeUsuarioResponse")
+    public JAXBElement<ExisteUsuarioResponse> createExisteUsuarioResponse(ExisteUsuarioResponse value) {
+        return new JAXBElement<ExisteUsuarioResponse>(_ExisteUsuarioResponse_QNAME, ExisteUsuarioResponse.class, null, value);
     }
 
 }

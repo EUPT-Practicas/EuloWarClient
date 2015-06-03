@@ -4,7 +4,7 @@
     Author     : Ricardo
 --%>
 <!-- Formulario de recuperar contraseña -->
-<form action="Recuperar" method="POST">
+<form action="RecuperarPassword" method="POST">
     <h3 class="text-center">
         <b>Restablecer contraseña</b>
     </h3>

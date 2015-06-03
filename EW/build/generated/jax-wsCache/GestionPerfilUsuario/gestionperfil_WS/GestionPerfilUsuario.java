@@ -26,18 +26,36 @@ public interface GestionPerfilUsuario {
 
     /**
      * 
-     * @param name
+     * @param emailUsuario
      * @return
-     *     returns java.lang.String
+     *     returns java.lang.Boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://webservices/", className = "gestionperfil_WS.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.HelloResponse")
-    @Action(input = "http://webservices/GestionPerfilUsuario/helloRequest", output = "http://webservices/GestionPerfilUsuario/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "restablecerPassword", targetNamespace = "http://webservices/", className = "gestionperfil_WS.RestablecerPassword")
+    @ResponseWrapper(localName = "restablecerPasswordResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.RestablecerPasswordResponse")
+    @Action(input = "http://webservices/GestionPerfilUsuario/restablecerPasswordRequest", output = "http://webservices/GestionPerfilUsuario/restablecerPasswordResponse")
+    public Boolean restablecerPassword(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
+
+    /**
+     * 
+     * @param emailUsuario
+     * @param password
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "eliminarCuenta", targetNamespace = "http://webservices/", className = "gestionperfil_WS.EliminarCuenta")
+    @ResponseWrapper(localName = "eliminarCuentaResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.EliminarCuentaResponse")
+    @Action(input = "http://webservices/GestionPerfilUsuario/eliminarCuentaRequest", output = "http://webservices/GestionPerfilUsuario/eliminarCuentaResponse")
+    public Boolean eliminarCuenta(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
 
     /**
      * 
@@ -65,35 +83,17 @@ public interface GestionPerfilUsuario {
 
     /**
      * 
-     * @param emailUsuario
-     * @param password
+     * @param name
      * @return
-     *     returns java.lang.Boolean
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "eliminarCuenta", targetNamespace = "http://webservices/", className = "gestionperfil_WS.EliminarCuenta")
-    @ResponseWrapper(localName = "eliminarCuentaResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.EliminarCuentaResponse")
-    @Action(input = "http://webservices/GestionPerfilUsuario/eliminarCuentaRequest", output = "http://webservices/GestionPerfilUsuario/eliminarCuentaResponse")
-    public Boolean eliminarCuenta(
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param emailUsuario
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "restablecerPassword", targetNamespace = "http://webservices/", className = "gestionperfil_WS.RestablecerPassword")
-    @ResponseWrapper(localName = "restablecerPasswordResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.RestablecerPasswordResponse")
-    @Action(input = "http://webservices/GestionPerfilUsuario/restablecerPasswordRequest", output = "http://webservices/GestionPerfilUsuario/restablecerPasswordResponse")
-    public Boolean restablecerPassword(
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario);
+    @RequestWrapper(localName = "hello", targetNamespace = "http://webservices/", className = "gestionperfil_WS.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://webservices/", className = "gestionperfil_WS.HelloResponse")
+    @Action(input = "http://webservices/GestionPerfilUsuario/helloRequest", output = "http://webservices/GestionPerfilUsuario/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
 }

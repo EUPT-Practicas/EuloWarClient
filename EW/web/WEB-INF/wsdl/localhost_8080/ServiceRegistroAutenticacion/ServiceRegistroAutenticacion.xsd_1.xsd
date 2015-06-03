@@ -8,6 +8,10 @@
 
 <xs:element name="crearUsuarioResponse" type="tns:crearUsuarioResponse"/>
 
+<xs:element name="existeUsuario" type="tns:existeUsuario"/>
+
+<xs:element name="existeUsuarioResponse" type="tns:existeUsuarioResponse"/>
+
 <xs:element name="findUser" type="tns:findUser"/>
 
 <xs:element name="findUserResponse" type="tns:findUserResponse"/>
@@ -32,6 +36,18 @@
 <xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existeUsuario">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existeUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

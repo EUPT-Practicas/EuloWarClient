@@ -78,6 +78,8 @@ function mostrarRecuperar() {
 function mostrarErrorLogin(_mensaje, _tipo) {
     if (_tipo === 'reg') {
         mostrarRegistro();
+    } else if (_tipo === 'pass') {
+        mostrarRecuperar();
     } else {
         mostrarLogin();
     }

@@ -44,6 +44,21 @@ public interface ServiceRegistroAutenticacion {
 
     /**
      * 
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "existeUsuario", targetNamespace = "http://webservices/", className = "clientes_WS.ExisteUsuario")
+    @ResponseWrapper(localName = "existeUsuarioResponse", targetNamespace = "http://webservices/", className = "clientes_WS.ExisteUsuarioResponse")
+    @Action(input = "http://webservices/ServiceRegistroAutenticacion/existeUsuarioRequest", output = "http://webservices/ServiceRegistroAutenticacion/existeUsuarioResponse")
+    public boolean existeUsuario(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
      * @param nombreUsuario
      * @return
      *     returns clientes_WS.Usuario
