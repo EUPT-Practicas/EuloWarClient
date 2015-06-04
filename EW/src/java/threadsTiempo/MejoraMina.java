@@ -5,7 +5,7 @@
  */
 package threadsTiempo;
 
-import asignarRecursos_WS.Mina;
+import operacionesminas_client.Mina;
 import cliente_webservice.ClienteRecursosMinas;
 import java.util.Timer;
 import java.util.TimerTask;

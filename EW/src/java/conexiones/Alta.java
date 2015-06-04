@@ -46,6 +46,7 @@ public class Alta extends HttpServlet {
 
             boolean exitoRegistro = false;
             boolean exitoRecursos = false;
+            boolean exitoTropas = false;
             Usuario usuario;
 
             //Recoger los datos del formulario.
@@ -64,6 +65,7 @@ public class Alta extends HttpServlet {
                 if (exitoRegistro) {
                     exitoRecursos = cra.asignarRecursos(email);
                     Mina m = crm.asignarMina(email);
+                    exitoTropas = cra.asignarFabricasTropas(email);
                     if (exitoRecursos) {
                         usuario = (Usuario) cra.findUser(nombreUsuario);
                         System.out.println("asignados mina y recursos");
