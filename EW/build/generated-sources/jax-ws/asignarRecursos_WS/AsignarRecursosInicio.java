@@ -28,6 +28,21 @@ public interface AsignarRecursosInicio {
      * 
      * @param emailUsuario
      * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "asignarFabricasTropas", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarFabricasTropas")
+    @ResponseWrapper(localName = "asignarFabricasTropasResponse", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarFabricasTropasResponse")
+    @Action(input = "http://webservices/AsignarRecursosInicio/asignarFabricasTropasRequest", output = "http://webservices/AsignarRecursosInicio/asignarFabricasTropasResponse")
+    public boolean asignarFabricasTropas(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
+
+    /**
+     * 
+     * @param emailUsuario
+     * @return
      *     returns java.lang.Boolean
      */
     @WebMethod
@@ -36,21 +51,6 @@ public interface AsignarRecursosInicio {
     @ResponseWrapper(localName = "asignarRecursosResponse", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarRecursosResponse")
     @Action(input = "http://webservices/AsignarRecursosInicio/asignarRecursosRequest", output = "http://webservices/AsignarRecursosInicio/asignarRecursosResponse")
     public Boolean asignarRecursos(
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario);
-
-    /**
-     * 
-     * @param emailUsuario
-     * @return
-     *     returns asignarRecursos_WS.Mina
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "asignarMina", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarMina")
-    @ResponseWrapper(localName = "asignarMinaResponse", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarMinaResponse")
-    @Action(input = "http://webservices/AsignarRecursosInicio/asignarMinaRequest", output = "http://webservices/AsignarRecursosInicio/asignarMinaResponse")
-    public Mina asignarMina(
         @WebParam(name = "emailUsuario", targetNamespace = "")
         String emailUsuario);
 

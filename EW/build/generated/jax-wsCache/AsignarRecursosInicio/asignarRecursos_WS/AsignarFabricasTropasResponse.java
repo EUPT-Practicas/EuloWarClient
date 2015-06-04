@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para asignarMinaResponse complex type.
+ * <p>Clase Java para asignarFabricasTropasResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="asignarMinaResponse">
+ * &lt;complexType name="asignarFabricasTropasResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://webservices/}mina" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,35 +27,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "asignarMinaResponse", propOrder = {
+@XmlType(name = "asignarFabricasTropasResponse", propOrder = {
     "_return"
 })
-public class AsignarMinaResponse {
+public class AsignarFabricasTropasResponse {
 
     @XmlElement(name = "return")
-    protected Mina _return;
+    protected boolean _return;
 
     /**
      * Obtiene el valor de la propiedad return.
      * 
-     * @return
-     *     possible object is
-     *     {@link Mina }
-     *     
      */
-    public Mina getReturn() {
+    public boolean isReturn() {
         return _return;
     }
 
     /**
      * Define el valor de la propiedad return.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Mina }
-     *     
      */
-    public void setReturn(Mina value) {
+    public void setReturn(boolean value) {
         this._return = value;
     }
 
