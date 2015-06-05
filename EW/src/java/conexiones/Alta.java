@@ -74,6 +74,7 @@ public class Alta extends HttpServlet {
                         g.crearThreadRecursosMina(m);
 
                         HttpSession nuevaSesion = request.getSession();
+                        nuevaSesion.setAttribute("auth", "OK");
                         nuevaSesion.setAttribute("usuario", usuario);
                         nuevaSesion.removeAttribute("err");
 

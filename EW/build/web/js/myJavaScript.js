@@ -99,6 +99,12 @@ function mostrarErrorLogin(_mensaje, _tipo) {
     }
 }
 
+function mostrarErrorRecursos(_mensaje){
+    if(_mensaje !== null && _mensaje !== ''){
+        alert(_mensaje);
+    }
+}
+
 function ocultarError() {
     $.ajax({
         type: "POST",

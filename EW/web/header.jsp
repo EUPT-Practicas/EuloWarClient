@@ -5,11 +5,23 @@
 --%>
 <%@page import="clientes_WS.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%HttpSession miSesion = request.getSession();
+<%
+    HttpSession miSesion = request.getSession(false);
+
+if(((String) miSesion.getAttribute("auth")) != "OK"){
+    System.err.println("AUTH != OK : " + (String) miSesion.getAttribute("auth"));
+//    String mensaje = "La session ha expirado.";
+//                request.setAttribute("mensaje", mensaje);
+//                request.setAttribute("tipo", "reg");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+}
 
     Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
+
     String nombreUsuario = usuario.getNombreUsuario();
-    String email = usuario.getEmail();%>
+    String email = usuario.getEmail();
+%>
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +44,7 @@
                     <strong>Hierro:</strong> <strong id="cantidadRecursos">0</strong></h5><!--cambiar por el contenido dinamico!!!!!!!!!!-->
             </div>
             <div class="row text-right">
-                <h5 class="text-primary"><img src="img/icon/tropa.png" class="  " alt="Responsive image"><strong>Tropas:170/200</strong></h5>
+                <h5 class="text-primary"><img src="img/icon/tropa.png" class="  " alt="Responsive image"><strong>Tropas: 170/200</strong></h5>
             </div>
             <div class="col-md-3 col-md-offset-5">
             </div>   

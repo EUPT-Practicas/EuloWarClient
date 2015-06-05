@@ -24,6 +24,7 @@
             $(this).addClass('active');
         });
     </script>
+    <script src="./js/myJavaScript.js"></script>
 
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>

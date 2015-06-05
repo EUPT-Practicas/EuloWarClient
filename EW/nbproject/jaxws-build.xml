@@ -106,5 +106,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/gestionperfil_WS"/>
         <delete dir="${build.generated.dir}/jax-wsCache/GestionPerfilUsuario"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario"/>
+    <target name="wsimport-client-OperacionesCampamento" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OperacionesCampamento"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OperacionesCampamento" destdir="${build.generated.dir}/jax-wsCache/OperacionesCampamento" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?WSDL" xnocompile="true" xendorsed="true" package="operacionesCampamento_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OperacionesCampamento"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OperacionesCampamento">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OperacionesCampamento" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/operacionesCampamento_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OperacionesCampamento"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario, wsimport-client-OperacionesCampamento"/>
 </project>

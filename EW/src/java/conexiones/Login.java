@@ -64,6 +64,7 @@ public class Login extends HttpServlet {
                 usuario = (Usuario) cra.findUser(nombreUsuario);
 
                 HttpSession nuevaSesion = request.getSession();
+                nuevaSesion.setAttribute("auth", "OK");
                 nuevaSesion.setAttribute("usuario", usuario);
 
                 response.sendRedirect("./general.jsp");

@@ -83,16 +83,27 @@ public class NuevaMina extends HttpServlet {
         String email = usuario.getEmail();
 
         ClienteRecursosMinas crm = new ClienteRecursosMinas();
-        Mina nuevaMina = crm.asignarMina(email);
-        GestorThreads g = GestorThreads.getInstance();
-        g.crearThreadRecursosMina(nuevaMina);
 
-        int idMina = nuevaMina.getIdMina();
-        String nivelActualmina = "" + nuevaMina.getNivelMina();
+        String resultado = crm.restarRecursos(crm.obtenerNivelMina(1).getPrecio(), email);
+        switch (resultado) {
+            case "INSUFICIENTES_RECURSOS":
+                String mensaje = "No hay recursos suficientes. Se requieren: " + crm.obtenerNivelMina(1).getPrecio();
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("minas.jsp").forward(request, response);
+                break;
+            case "OK":
+                Mina nuevaMina = crm.asignarMina(email);
+                GestorThreads g = GestorThreads.getInstance();
+                g.crearThreadRecursosMina(nuevaMina);
 
-        System.err.println("nivel NUEVA MINA: " + nivelActualmina);
+                int idMina = nuevaMina.getIdMina();
+                String nivelActualmina = "" + nuevaMina.getNivelMina();
 
-        response.sendRedirect("minas.jsp");
+                System.err.println("nivel NUEVA MINA: " + nivelActualmina);
+
+                response.sendRedirect("minas.jsp");
+                break;
+        }
 
     }
 

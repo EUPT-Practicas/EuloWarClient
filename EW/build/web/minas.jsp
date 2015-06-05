@@ -46,7 +46,7 @@
 
         </script>
     </head>
-    <body id="v_minas">
+    <body id="v_minas" onload="mostrarErrorRecursos('${mensaje}');">
         <header>    
             <%@ include file='header.jsp' %>
         </header>

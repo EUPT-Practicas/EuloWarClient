@@ -16,4 +16,6 @@
     <system systemId="http://localhost:8080/GestionPerfilUsuario/GestionPerfilUsuario?xsd=1" uri="src/conf/xml-resources/web-service-references/GestionPerfilUsuario/wsdl/localhost_8080/GestionPerfilUsuario/GestionPerfilUsuario.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" uri="src/conf/xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="src/conf/xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.wsdl"/>
+    <system systemId="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.xsd_1.xsd"/>
 </catalog>
