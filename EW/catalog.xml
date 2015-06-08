@@ -18,4 +18,6 @@
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="src/conf/xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.wsdl"/>
     <system systemId="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesCampamento/wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OperacionesTropas/OperacionesTropas?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesTropas/wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.wsdl"/>
+    <system systemId="http://localhost:8080/OperacionesTropas/OperacionesTropas?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesTropas/wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.xsd_1.xsd"/>
 </catalog>

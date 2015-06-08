@@ -12,6 +12,9 @@ import operacionesCampamento_WS.Campamento;
  * @author Sergio
  */
 public class ClienteCampamento {
+    public ClienteCampamento(){
+        
+    }
 
     public Campamento getCampamento(int idCampamento) {
         operacionesCampamento_WS.OperacionesCampamento_Service service = new operacionesCampamento_WS.OperacionesCampamento_Service();

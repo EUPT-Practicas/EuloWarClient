@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices/">
+
+<xs:element name="agregarTropasDefensivas" type="tns:agregarTropasDefensivas"/>
+
+<xs:element name="agregarTropasDefensivasResponse" type="tns:agregarTropasDefensivasResponse"/>
+
+<xs:element name="agregarTropasOfensivas" type="tns:agregarTropasOfensivas"/>
+
+<xs:element name="agregarTropasOfensivasResponse" type="tns:agregarTropasOfensivasResponse"/>
+
+<xs:element name="campamento" type="tns:campamento"/>
+
+<xs:element name="fabricaDefensiva" type="tns:fabricaDefensiva"/>
+
+<xs:element name="fabricaOfensiva" type="tns:fabricaOfensiva"/>
+
+<xs:element name="getNivelFabricaAtaque" type="tns:getNivelFabricaAtaque"/>
+
+<xs:element name="getNivelFabricaAtaqueResponse" type="tns:getNivelFabricaAtaqueResponse"/>
+
+<xs:element name="getNivelFabricaDefensa" type="tns:getNivelFabricaDefensa"/>
+
+<xs:element name="getNivelFabricaDefensaResponse" type="tns:getNivelFabricaDefensaResponse"/>
+
+<xs:element name="getTropaAtaque" type="tns:getTropaAtaque"/>
+
+<xs:element name="getTropaAtaqueResponse" type="tns:getTropaAtaqueResponse"/>
+
+<xs:element name="getTropaDefensa" type="tns:getTropaDefensa"/>
+
+<xs:element name="getTropaDefensaResponse" type="tns:getTropaDefensaResponse"/>
+
+<xs:element name="mejorarFabricaDefensiva" type="tns:mejorarFabricaDefensiva"/>
+
+<xs:element name="mejorarFabricaDefensivaResponse" type="tns:mejorarFabricaDefensivaResponse"/>
+
+<xs:element name="mejorarFabricaOfensiva" type="tns:mejorarFabricaOfensiva"/>
+
+<xs:element name="mejorarFabricaOfensivaResponse" type="tns:mejorarFabricaOfensivaResponse"/>
+
+<xs:element name="mejorarTropaDefensiva" type="tns:mejorarTropaDefensiva"/>
+
+<xs:element name="mejorarTropaDefensivaResponse" type="tns:mejorarTropaDefensivaResponse"/>
+
+<xs:element name="mejorarTropaOfensiva" type="tns:mejorarTropaOfensiva"/>
+
+<xs:element name="mejorarTropaOfensivaResponse" type="tns:mejorarTropaOfensivaResponse"/>
+
+<xs:element name="tropaAtaque" type="tns:tropaAtaque"/>
+
+<xs:element name="tropaDefensa" type="tns:tropaDefensa"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="mejorarTropaDefensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarTropaDefensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarTropaOfensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarTropaOfensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaOfensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaOfensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTropaDefensa">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoTropa" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTropaDefensaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tropaDefensa" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tropaDefensa">
+<xs:sequence>
+<xs:element name="FKTropaDefensaCampamento" type="tns:campamento" minOccurs="0"/>
+<xs:element name="FKTropaDefensaFabricaDefensiva" type="tns:fabricaDefensiva" minOccurs="0"/>
+<xs:element name="FKTropaDefensaUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idTropaDefensa" type="xs:int" minOccurs="0"/>
+<xs:element name="nivelTropaDefensa" type="xs:int" minOccurs="0"/>
+<xs:element name="tipoTropaDefensa" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="campamento">
+<xs:sequence>
+<xs:element name="FKCampamentoUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idCampamento" type="xs:int" minOccurs="0"/>
+<xs:element name="total" type="xs:int" minOccurs="0"/>
+<xs:element name="tropasAlmacenadas" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fabricaDefensiva">
+<xs:sequence>
+<xs:element name="FKFabricaDefensivaUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idFabricaDefensiva" type="xs:int" minOccurs="0"/>
+<xs:element name="nivelFabricaDefensiva" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTropaAtaque">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoTropa" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTropaAtaqueResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tropaAtaque" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tropaAtaque">
+<xs:sequence>
+<xs:element name="FKTropaAtaqueCampamento" type="tns:campamento" minOccurs="0"/>
+<xs:element name="FKTropaAtaqueFabricaOfensiva" type="tns:fabricaOfensiva" minOccurs="0"/>
+<xs:element name="FKTropaAtaqueUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idTropaAtaque" type="xs:int" minOccurs="0"/>
+<xs:element name="nivelTropaAtaque" type="xs:int" minOccurs="0"/>
+<xs:element name="tipoTropaAtaque" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fabricaOfensiva">
+<xs:sequence>
+<xs:element name="FKFabricaOfensivaUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="idFabricaOfensiva" type="xs:int" minOccurs="0"/>
+<xs:element name="nivelFabricaOfensiva" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNivelFabricaDefensa">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNivelFabricaDefensaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNivelFabricaAtaque">
+<xs:sequence>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNivelFabricaAtaqueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaDefensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaDefensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarTropasDefensivas">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarTropasDefensivasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarTropasOfensivas">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarTropasOfensivasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

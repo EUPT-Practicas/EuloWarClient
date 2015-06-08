@@ -4,8 +4,26 @@
     Author     : Sergio
 --%>
 
+<%@page import="cliente_webservice.ClienteTropas"%>
+<%@page import="operacionesminas_client.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+        HttpSession miSesion = request.getSession(false);
+
+    if (((String) miSesion.getAttribute("auth")) != "OK") {
+        System.err.println("AUTH != OK : " + (String) miSesion.getAttribute("auth"));
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+
+    }
+
+    Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
+
+    String nombreUsuario = usuario.getNombreUsuario();
+    String email = usuario.getEmail();
+    String nivelF = request.getParameter("nivelF");
+    ClienteTropas ct = new ClienteTropas();
+    int nivel = ct.getNivelFabricaAtaque(email);
+    System.err.println("nivel F: " + nivel);
 //    String nivelActualmina = request.getParameter("input");
 //    String output = request.getParameter("output");
 //    int idMina = Integer.valueOf(request.getParameter("IdRambo"));
@@ -25,7 +43,7 @@
 %>
 <script src="./js/myJavaScript.js"></script>
 <div class="col-md-1 col-md-offset-11 text-right">
-    <h5><strong>Nivel: 5</strong></h5>
+    <h5><strong>Nivel: <%= nivel%></strong></h5>
 </div> 
 <div class="col-md-5 col-md-offset-0">
     </br>

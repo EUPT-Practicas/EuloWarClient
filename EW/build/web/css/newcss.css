@@ -36,3 +36,9 @@ and open the template in the editor.
   padding-left: 15px;
   padding-right:150px;
 }
+
+a.disableddddd {
+   pointer-events: none;
+   cursor: default;
+   
+}

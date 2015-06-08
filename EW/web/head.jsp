@@ -14,6 +14,7 @@
 
     <!-- CSS de Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/newcss.css" rel="stylesheet" media="screen">
     <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/JavaScript" src="js/websocket.js"></script>
     <script type="text/javascript">

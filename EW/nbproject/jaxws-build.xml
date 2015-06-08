@@ -122,5 +122,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/operacionesCampamento_WS"/>
         <delete dir="${build.generated.dir}/jax-wsCache/OperacionesCampamento"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario, wsimport-client-OperacionesCampamento"/>
+    <target name="wsimport-client-OperacionesTropas" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OperacionesTropas"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OperacionesTropas" destdir="${build.generated.dir}/jax-wsCache/OperacionesTropas" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesTropas/wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/OperacionesTropas/OperacionesTropas?WSDL" xnocompile="true" xendorsed="true" package="operacionesTropas_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesTropas/wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OperacionesTropas"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OperacionesTropas">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OperacionesTropas" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/operacionesTropas_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OperacionesTropas"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario, wsimport-client-OperacionesCampamento, wsimport-client-OperacionesTropas"/>
 </project>
