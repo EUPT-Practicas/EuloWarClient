@@ -38,4 +38,12 @@ public class GestorThreads {
         poolThreads.execute(new MejoraMina(idMina));
     }
     
+    public void crearThreadMejoraAtaque(String emailUsuario){
+        poolThreads.execute(new MejorarAtaque(emailUsuario));
+    }
+    
+    public void crearThreadMejorarDefensa(String emailUsuario){
+        poolThreads.execute(new MejorarDefensa(emailUsuario));
+    }
+    
 }

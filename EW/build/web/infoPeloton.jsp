@@ -27,6 +27,7 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
     ClienteTropas ct = new ClienteTropas();
                 int nivel = ct.getNivelFabricaAtaque(email);
                 System.err.println("nivel F: " + nivel);
+                int numPeloton = ct.getTropaAtaque(email, "PELOTON").getUnidades();
 //    String nivelActualmina = request.getParameter("input");
 //    String output = request.getParameter("output");
 //    int idMina = Integer.valueOf(request.getParameter("IdRambo"));
@@ -72,7 +73,7 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
             <h5 class="">Coste de mejora: 5.000 Hierro</h5>
         </div>
         <div class="row text-center">
-            <h5 class=""><b>Nº Tropas adquiridas:</b> 55</h5>
+            <h5 class=""><b>Nº Tropas adquiridas:</b> <%= numPeloton%></h5>
         </div>
         <div class="panel  col-md-9 col-md-offset-1">
             <div class="col-md-6 col-md-offset-0">
@@ -80,14 +81,16 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
                     <span class="input-group-btn data-dwn">
                         <button class="btn btn-primary" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                     </span>
-                    <input type="text" class="form-control text-center" value="1" min="1" max="40" readonly>
+                    <input id="numTropasSpinner" type="text" class="form-control text-center" value="1" min="1" max="40" readonly>
                     <span class="input-group-btn data-up">
                         <button class="btn btn-primary " data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                     </span>
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-0">
+                <a onclick="comprarTropasOfensivas('PELOTON');">
                 <button type="button" class="btn btn-primary col-md-12 ">Comprar</button>
+                </a>
             </div>
         </div>
     </div>

@@ -24,6 +24,18 @@
         <servlet-name>NuevoCampamento</servlet-name>
         <servlet-class>conexiones.NuevoCampamento</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MejorarAtaque</servlet-name>
+        <servlet-class>conexiones.MejorarAtaque</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MejorarDefensa</servlet-name>
+        <servlet-class>conexiones.MejorarDefensa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ComprarTropasAtaque</servlet-name>
+        <servlet-class>conexiones.ComprarTropasAtaque</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Alta</servlet-name>
         <url-pattern>/Alta</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>NuevoCampamento</servlet-name>
         <url-pattern>/NuevoCampamento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MejorarAtaque</servlet-name>
+        <url-pattern>/MejorarAtaque</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MejorarDefensa</servlet-name>
+        <url-pattern>/MejorarDefensa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComprarTropasAtaque</servlet-name>
+        <url-pattern>/ComprarTropasAtaque</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
