@@ -21,6 +21,8 @@ import threadsTiempo.GestorThreads;
  * @author Sergio
  */
 public class MejorarDefensa extends HttpServlet {
+    
+    private final int PRECIO_FABRICA_DEFENSA = 500;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,17 +39,23 @@ public class MejorarDefensa extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             System.out.println("- - - ENTRA A POST ME_DEF");
+            int nivel = Integer.valueOf(request.getParameter("nivelFabrica"));
 
             HttpSession miSession = request.getSession();
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
             
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
-            String resultadoRecursos = crm.restarRecursos(unidades, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
+            String resultadoRecursos = crm.restarRecursos(nivel*PRECIO_FABRICA_DEFENSA, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
             
-            GestorThreads.getInstance().crearThreadMejorarDefensa(email);
+            if (resultadoRecursos.equals("INSUFICIENTES_RECURSOS")) {
+                //NO TIENES RECURSOS... HACER ALGO...
+            } else if (resultadoRecursos.equals("OK")) {
+                GestorThreads.getInstance().crearThreadMejorarDefensa(email);
             
-                        response.sendRedirect("defensa.jsp");
+                response.sendRedirect("defensa.jsp");
+            
+            }
         }
     }
 

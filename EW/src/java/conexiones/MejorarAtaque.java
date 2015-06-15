@@ -21,6 +21,8 @@ import threadsTiempo.GestorThreads;
  * @author Sergio
  */
 public class MejorarAtaque extends HttpServlet {
+    
+    private final int PRECIO_FABRICA_ATAQUE = 500;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,11 +46,17 @@ public class MejorarAtaque extends HttpServlet {
             String email = usuario.getEmail();
             
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
-            String resultadoRecursos = crm.restarRecursos(unidades, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
+            String resultadoRecursos = crm.restarRecursos(nivel*PRECIO_FABRICA_ATAQUE, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
             
-            GestorThreads.getInstance().crearThreadMejoraAtaque(email);
+            if (resultadoRecursos.equals("INSUFICIENTES_RECURSOS")) {
+                //NO TIENES RECURSOS... HACER ALGO...
+            } else if (resultadoRecursos.equals("OK")) {
+                GestorThreads.getInstance().crearThreadMejoraAtaque(email);
             
-            response.sendRedirect("ataque.jsp");
+                response.sendRedirect("ataque.jsp");
+            
+            }
+            
         }
     }
 
