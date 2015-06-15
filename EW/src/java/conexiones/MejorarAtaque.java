@@ -50,6 +50,7 @@ public class MejorarAtaque extends HttpServlet {
             
             if (resultadoRecursos.equals("INSUFICIENTES_RECURSOS")) {
                 //NO TIENES RECURSOS... HACER ALGO...
+                System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
             } else if (resultadoRecursos.equals("OK")) {
                 GestorThreads.getInstance().crearThreadMejoraAtaque(email);
             

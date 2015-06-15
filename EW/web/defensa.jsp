@@ -13,6 +13,17 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <script type="text/javascript">
 
+            function setInfoFabrica() {
+                $.ajax({
+                    type: "POST",
+                    url: "infoFabricaDefensa.jsp",
+                    success: function (msg) {
+                        $('#infoDefensa').empty();
+                        $('#infoDefensa').html(msg);
+                    }
+                });
+            }
+
             function setInfoDefensa(_tipoDefensa, _nivelF) {
 
                 if (_tipoDefensa === "campoMinas") {
@@ -96,7 +107,7 @@
         <div class="row">
             <div class="panel panel-default col-md-10 col-md-offset-1" id="infoDefensa">
                 <center><h1>No hay tropa seleccionada.</h1></center>
-                
+
             </div>
             <%                ClienteTropas ct = new ClienteTropas();
                 int nivel = ct.getNivelFabricaDefensa(email);
@@ -112,11 +123,15 @@
                 <div class="col-md-0 col-md-offset-0"></div>
 
                 <div class="col-md-2 col-md-offset-0">
-                    <form action="MejorarDefensa" method="POST">
+                    <!--<form action="MejorarDefensa" method="POST">
                         <input type="image" src="img/defensa/mejorar.png" class="img-responsive" alt="Mejorar Defensa">
-<!--                    <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">-->
-                    <h5 class="text-center">Mejorar Defensa</h5>
-                    </form>
+                    <!--                    <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">-->
+                    <!--<h5 class="text-center">Mejorar Defensa</h5>
+                    </form>-->
+                    <a href="#" onclick="setInfoFabrica();">
+                        <img src="img/defensa/mejorar.png" class="img-responsive" alt="Información Fábrica">
+                        <h5 class="text-center">Mejorar Defensa</h5>
+                    </a>
                 </div>
 
                 <div class="col-md-2 col-md-offset-0">

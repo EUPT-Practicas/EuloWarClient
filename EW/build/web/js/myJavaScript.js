@@ -52,7 +52,7 @@ function mejorarMina(_idMina) {
 }
 
 function mejorarFabricaAtaque(_nivelFabrica) {
-    console.log("MEJORAR ATAQUE");
+    console.log("MEJORAR ATAQUE" + _nivelFabrica);
     $.ajax({
         type: "POST",
         url: "MejorarAtaque",
@@ -60,11 +60,11 @@ function mejorarFabricaAtaque(_nivelFabrica) {
         success: function (msg) {
         }
     });
-    setContador();
+    //setContador();
 }
 
 function mejorarFabricaDefensa(_nivelFabrica) {
-    console.log("MEJORAR DEFENSA");
+    console.log("MEJORAR DEFENSA" + _nivelFabrica);
     $.ajax({
         type: "POST",
         url: "MejorarDefensa", //por hacer
@@ -73,7 +73,7 @@ function mejorarFabricaDefensa(_nivelFabrica) {
             
         }
     });
-    setContador();
+    //setContador();
 }
 
 function comprarTropasOfensivas(_tipoTropa) {

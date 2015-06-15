@@ -83,6 +83,7 @@ public class ComprarTropasAtaque extends HttpServlet {
             String respuestaPrecio = crm.restarRecursos(precioTropas, email);
             if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
                 //NO TIENES RECURSOS... HACER ALGO...
+                System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
             } else if (respuestaPrecio.equals("OK")) {
 
                 System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
