@@ -51,12 +51,26 @@ function mejorarMina(_idMina) {
     });
 }
 
-function mejorarFabricaAtaque() {
+function mejorarFabricaAtaque(_nivelFabrica) {
     console.log("MEJORAR ATAQUE");
     $.ajax({
         type: "POST",
         url: "MejorarAtaque",
+        data: "nivelFabrica" + _nivelFabrica,
         success: function (msg) {
+        }
+    });
+    setContador();
+}
+
+function mejorarFabricaDefensa(_nivelFabrica) {
+    console.log("MEJORAR DEFENSA");
+    $.ajax({
+        type: "POST",
+        url: "MejorarDefensa", //por hacer
+        data: "nivelFabrica=" + _nivelFabrica,
+        success: function (msg){
+            
         }
     });
     setContador();
@@ -69,6 +83,18 @@ function comprarTropasOfensivas(_tipoTropa) {
         url: "ComprarTropasAtaque",
         data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
         success: function (msg) {
+        }
+    });
+}
+
+function comprarTropasDefensivas(_tipoTropa) {
+    console.log("COMPRAR TROPAS DEFENSIVAS: " + document.getElementById("numTropasSpinner").value);
+    $.ajax({
+        type: "POST",
+        url: "ComprarTropasDefensa", //por hacer
+        data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
+        success: function (msg) {
+            
         }
     });
 }

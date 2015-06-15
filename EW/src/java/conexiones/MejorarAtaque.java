@@ -5,6 +5,7 @@
  */
 package conexiones;
 
+import cliente_webservice.ClienteRecursosMinas;
 import clientes_WS.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,10 +37,14 @@ public class MejorarAtaque extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             System.out.println("- - - ENTRA A POST ME_ATA");
+            int nivel = Integer.valueOf(request.getParameter("nivelFabrica"));
 
             HttpSession miSession = request.getSession();
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
+            
+            ClienteRecursosMinas crm = new ClienteRecursosMinas();
+            String resultadoRecursos = crm.restarRecursos(unidades, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
             
             GestorThreads.getInstance().crearThreadMejoraAtaque(email);
             

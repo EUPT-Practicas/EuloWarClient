@@ -6,21 +6,37 @@
 package conexiones;
 
 import cliente_webservice.ClienteRecursosMinas;
+import cliente_webservice.ClienteTropas;
 import clientes_WS.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import threadsTiempo.GestorThreads;
 
 /**
  *
- * @author Sergio
+ * @author FranciscoJavier
  */
-public class MejorarDefensa extends HttpServlet {
+@WebServlet(name = "ComprarTropasDefensa", urlPatterns = {"/ComprarTropasDefensa"})
+public class ComprarTropasDefensa extends HttpServlet {
+    
+    private final int PRECIO_CAMPO_MINAS = 50;
+    private final int PRECIO_TRINCHERA_AMETRALLADORAS = 100;
+    private final int PRECIO_CANYON_COMBATE = 200;
+    private final int PRECIO_CANYON_ANTIAEREO = 400;
+    private final int PRECIO_MISIL_ANTIAEREO = 800;
+    private final int PRECIO_RAMBO = 1600;
+    
+    private final String D_MISIL_ANTIAEREO = "MISIL_ANTIAEREO";
+    private final String D_TRINCHERA_AMETRALLADORAS = "TRINCHERA_AMETRALLADORAS";
+    private final String D_RAMBO = "RAMBO";
+    private final String D_CAMPO_MINAS = "CAMPO_MINAS";
+    private final String D_CANYON_COMBATE = "CAÑON_COMBATE";
+    private final String D_CANYON_ANTIAEREO = "CAÑON_ANTIAEREO";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,18 +52,49 @@ public class MejorarDefensa extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            System.out.println("- - - ENTRA A POST ME_DEF");
+            /* TODO output your page here. You may use following sample code. */
+            String tipoTropa = request.getParameter("tipoTropa");
+            int numTropas = Integer.valueOf(request.getParameter("numTropas"));
 
             HttpSession miSession = request.getSession();
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
-            
+
+            //CALCULAR PRECIO Y COMPROBAR
+            int precioTropas = 0;
+            switch (tipoTropa) {
+                case D_CAMPO_MINAS:
+                    precioTropas = numTropas * PRECIO_CAMPO_MINAS;
+                    break;
+                case D_CANYON_ANTIAEREO:
+                    precioTropas = numTropas * PRECIO_CANYON_ANTIAEREO;
+                    break;
+                case D_CANYON_COMBATE:
+                    precioTropas = numTropas * PRECIO_CANYON_COMBATE;
+                    break;
+                case D_MISIL_ANTIAEREO:
+                    precioTropas = numTropas * PRECIO_MISIL_ANTIAEREO;
+                    break;
+                case D_RAMBO:
+                    precioTropas = numTropas * PRECIO_RAMBO;
+                    break;
+                case D_TRINCHERA_AMETRALLADORAS:
+                    precioTropas = numTropas * PRECIO_TRINCHERA_AMETRALLADORAS;
+                    break;
+            }
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
-            String resultadoRecursos = crm.restarRecursos(unidades, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
-            
-            GestorThreads.getInstance().crearThreadMejorarDefensa(email);
-            
-                        response.sendRedirect("defensa.jsp");
+            String respuestaPrecio = crm.restarRecursos(precioTropas, email);
+            if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
+                //NO TIENES RECURSOS... HACER ALGO...
+            } else if (respuestaPrecio.equals("OK")) {
+
+                System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
+                ClienteTropas ct = new ClienteTropas();
+                ct.agregarTropasDefensivas(email, tipoTropa, numTropas);
+
+                response.sendRedirect("defensa.jsp");
+            }
+
         }
     }
 

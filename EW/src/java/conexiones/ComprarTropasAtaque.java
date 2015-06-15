@@ -5,6 +5,7 @@
  */
 package conexiones;
 
+import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteTropas;
 import clientes_WS.Usuario;
 import java.io.IOException;
@@ -20,6 +21,20 @@ import javax.servlet.http.HttpSession;
  * @author Sergio
  */
 public class ComprarTropasAtaque extends HttpServlet {
+
+    private final String A_TANQUE = "TANQUE";
+    private final String A_PELOTON = "PELOTON";
+    private final String A_AVION_COMBATE = "AVION_COMBATE";
+    private final String A_VEHICULO_BLINDADO = "VEHICULO_BLINDADO";
+    private final String A_HELICOPTERO = "HELICOPTERO";
+    private final String A_CHUCK_NORRIS = "CHUCK_NORRIS";
+
+    private final int PRECIO_PELOTON_1 = 50;
+    private final int PRECIO_VEHICULO_BLINDADO = 100;
+    private final int PRECIO_TANQUE = 200;
+    private final int PRECIO_HELICOPTERO = 400;
+    private final int PRECIO_AVION_COMBATE = 800;
+    private final int PRECIO_CHUCK_NORRIS = 1600;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,11 +57,40 @@ public class ComprarTropasAtaque extends HttpServlet {
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
 
-            System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
-            ClienteTropas ct = new ClienteTropas();
-            ct.agregarTropasOfensivas(email, tipoTropa, numTropas);
-            
-            response.sendRedirect("ataque.jsp");
+            //CALCULAR PRECIO Y COMPROBAR
+            int precioTropas = 0;
+            switch (tipoTropa) {
+                case A_AVION_COMBATE:
+                    precioTropas = numTropas * PRECIO_AVION_COMBATE;
+                    break;
+                case A_CHUCK_NORRIS:
+                    precioTropas = numTropas * PRECIO_CHUCK_NORRIS;
+                    break;
+                case A_HELICOPTERO:
+                    precioTropas = numTropas * PRECIO_HELICOPTERO;
+                    break;
+                case A_PELOTON:
+                    precioTropas = numTropas * PRECIO_PELOTON_1;
+                    break;
+                case A_TANQUE:
+                    precioTropas = numTropas * PRECIO_TANQUE;
+                    break;
+                case A_VEHICULO_BLINDADO:
+                    precioTropas = numTropas * PRECIO_VEHICULO_BLINDADO;
+                    break;
+            }
+            ClienteRecursosMinas crm = new ClienteRecursosMinas();
+            String respuestaPrecio = crm.restarRecursos(precioTropas, email);
+            if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
+                //NO TIENES RECURSOS... HACER ALGO...
+            } else if (respuestaPrecio.equals("OK")) {
+
+                System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
+                ClienteTropas ct = new ClienteTropas();
+                ct.agregarTropasOfensivas(email, tipoTropa, numTropas);
+
+                response.sendRedirect("ataque.jsp");
+            }
 
         }
     }

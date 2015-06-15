@@ -74,7 +74,7 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
         <div id="seccionContador"></div>
         <div class="panel  col-md-9 col-md-offset-1">
             <div class="col-md-6 col-md-offset-0">
-                <a onclick="mejorarFabricaAtaque();">
+                <a onclick="mejorarFabricaAtaque(<%= nivel%>);">
                 <button type="button" class="btn btn-primary col-md-12">Mejorar Fábrica</button>
                 </a>
             </div>
