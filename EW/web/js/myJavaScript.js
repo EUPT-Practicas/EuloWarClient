@@ -56,7 +56,7 @@ function mejorarFabricaAtaque(_nivelFabrica) {
     $.ajax({
         type: "POST",
         url: "MejorarAtaque",
-        data: "nivelFabrica" + _nivelFabrica,
+        data: "nivelFabrica=" + _nivelFabrica,
         success: function (msg) {
         }
     });
