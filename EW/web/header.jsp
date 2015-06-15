@@ -33,18 +33,18 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
     <div class="row">
         <div class="col-md-3 col-md-offset-1">
             <a href="general.jsp">
-                <img src="./img/logotipo.png" class="img-responsive " alt="Logo EuloWar">
+                <img src="./img/logotipo.png" class="img-responsive " alt="Logotipo EuloWar">
             </a>
         </div>
         <div class="col-md-2 col-md-offset-5">            
             </br></br></br>
             </br>
             <div class="row text-right">
-                <h5 class="text-primary"><img src="img/icon/iron.png" class=" " alt="Responsive image">
+                <h5 class="text-primary"><img src="img/icon/iron.png" class=" " alt="Cantidad de hierro">
                     <strong>Hierro:</strong> <strong id="cantidadRecursos">0</strong></h5><!--cambiar por el contenido dinamico!!!!!!!!!!-->
             </div>
             <div class="row text-right">
-                <h5 class="text-primary"><img src="img/icon/tropa.png" class="  " alt="Responsive image"><strong>Tropas: 170/200</strong></h5>
+                <h5 class="text-primary"><img src="img/icon/tropa.png" class="  " alt="Cantidad de tropas"><strong>Tropas: 170/200</strong></h5>
             </div>
             <div class="col-md-3 col-md-offset-5">
             </div>   

@@ -115,35 +115,35 @@
                     <form action="MejorarDefensa" method="POST">
                         <input type="image" src="img/defensa/mejorar.png" class="img-responsive" alt="Mejorar Defensa">
 <!--                    <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">-->
-                    <h5 class="text-center">Mejorar Defensas</h5>
+                    <h5 class="text-center">Mejorar Defensa</h5>
                     </form>
                 </div>
 
                 <div class="col-md-2 col-md-offset-0">
                     <a href="#" onclick="setInfoDefensa('campoMinas');">
-                        <img src="img/defensa/tedax.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/defensa/tedax.png" class="img-responsive" alt="Campo de minas">
                         <h5 class="text-center">Campo Minas (<%= numCampoMinas%>)</h5>
                     </a>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 1) {%>
                     <a href="#" onclick="setInfoDefensa('trincheraAmetralladoras');">
-                        <img src="img/defensa/bunker.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/defensa/bunker.png" class="img-responsive" alt="Trinchera Ametralladoras">
                         <h5 class="text-center">Trinchera Ametralladoras (<%= numTrinchera%>)</h5>
                     </a>
                     <%} else {%>
-                    <img src="img/defensa/bunkerDisabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/defensa/bunkerDisabled.png" class="img-responsive" alt="Trinchera Ametralladoras">
                     <h5 class="text-center">Trinchera Ametralladoras</h5>
                     <%}%>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 2) {%>
                     <a href="#" onclick="setInfoDefensa('canonAntiaereo');">
-                        <img src="img/defensa/antiaerea.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/defensa/antiaerea.png" class="img-responsive" alt="Cañon Antiaéreo">
                         <h5 class="text-center">Cañon Antiaereo (<%= numCanonAntiaereo%>)</h5>
                     </a>
                     <%} else {%>
-                    <img src="img/defensa/antiaereaDisabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/defensa/antiaereaDisabled.png" class="img-responsive" alt="Cañon Antiaéreo">
                     <h5 class="text-center">Cañon Antiaereo</h5>
                     <%}%>
                 </div>

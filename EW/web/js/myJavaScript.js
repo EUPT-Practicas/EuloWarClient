@@ -51,6 +51,17 @@ function mejorarMina(_idMina) {
     });
 }
 
+function mejorarFabricaAtaque() {
+    console.log("MEJORAR ATAQUE");
+    $.ajax({
+        type: "POST",
+        url: "MejorarAtaque",
+        success: function (msg) {
+        }
+    });
+    setContador();
+}
+
 function comprarTropasOfensivas(_tipoTropa) {
     console.log("COMPRAR TROPAS OFENSIVAS: " + document.getElementById("numTropasSpinner").value);
     $.ajax({
@@ -185,3 +196,36 @@ $(function () {
 //    });
 //
 //});
+
+//    /* Determinamos el tiempo total en segundos */
+//    var totalTiempo=20;
+//    /* Determinamos la url donde redireccionar */
+//    var url="http://www.lawebdelprogramador.com";
+// 
+//    function updateReloj()
+//    {
+//        document.getElementById('CuentaAtras').innerHTML = "Mejorando en "+totalTiempo+" segundos";
+// 
+//        if(totalTiempo==0)
+//        {
+//            //window.location=url;
+//        }else{
+//            /* Restamos un segundo al tiempo restante */
+//            totalTiempo-=1;
+//            /* Ejecutamos nuevamente la función al pasar 1000 milisegundos (1 segundo) */
+//            setTimeout("updateReloj()",1000);
+//        }
+//    }
+// 
+//    window.onload=updateReloj;
+//    
+//                function setContador() {
+//                $.ajax({
+//                    type: "POST",
+//                    url: "contador.jsp",
+//                    success: function (msg) {
+//                        $('#seccionContador').empty();
+//                        $('#seccionContador').html(msg);
+//                    }
+//                });
+//            }

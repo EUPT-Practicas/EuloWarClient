@@ -7,12 +7,12 @@
 <!-- Formulario de inicio sesion -->
 <form action="Login" method="POST">
     <div class="form-group">
-        <label for="ejemplo_password_1">Usuario</label>
+        <label>Usuario</label>
         <input type="text" class="form-control" name="nombre" placeholder="Nombre de usuario">
     </div>
 
     <div class="form-group">
-        <label for="ejemplo_password_1">Contraseña</label>
+        <label>Contraseña</label>
         <input type="password" class="form-control" name="password" id="ejemplo_password_1" 
                placeholder="Contraseña">
     </div>
@@ -26,7 +26,7 @@
     </h5>
     <h5 class="text-center">
         ¿No tienes cuenta?
-        <a href="#" onClick="mostrarRegistro();" > Registrate</a>
+        <a href="#" onClick="mostrarRegistro();" > Regístrate</a>
     </h5>
     </br>
 </form>

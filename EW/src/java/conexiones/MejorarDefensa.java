@@ -43,7 +43,7 @@ public class MejorarDefensa extends HttpServlet {
             
             GestorThreads.getInstance().crearThreadMejorarDefensa(email);
             
-                        response.sendRedirect("ataque.jsp");
+                        response.sendRedirect("defensa.jsp");
         }
     }
 

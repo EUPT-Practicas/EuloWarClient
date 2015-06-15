@@ -51,7 +51,7 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
 </div> 
 <div class="col-md-5 col-md-offset-0">
     </br>
-    <img src="img/ataque/peloton.png" class="img-responsive " alt="Responsive image">
+    <img src="img/ataque/peloton.png" class="img-responsive " alt="Pelotón">
 </div>
 <div class="row">
 

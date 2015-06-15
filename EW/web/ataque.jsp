@@ -10,8 +10,20 @@
 <html>
     <head>
         <%@ include file='head.jsp' %>
+
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <script type="text/javascript">
+
+            function setInfoFabrica() {
+                $.ajax({
+                    type: "POST",
+                    url: "infoFabricaAtaque.jsp",
+                    success: function (msg) {
+                        $('#infoAtaque').empty();
+                        $('#infoAtaque').html(msg);
+                    }
+                });
+            }
 
             function setInfoAtaque(_tipoAtaque, _nivelF) {
 
@@ -73,6 +85,33 @@
             }
 
         </script>
+        
+<!--        <script language="JavaScript">
+ 
+    /* Determinamos el tiempo total en segundos */
+    var totalTiempo=5;
+    /* Determinamos la url donde redireccionar */
+    var url="http://www.lawebdelprogramador.com";
+ 
+    function updateReloj()
+    {
+        document.getElementById('CuentaAtras').innerHTML = "Mejorando en "+totalTiempo+" segundos";
+ 
+        if(totalTiempo==0)
+        {
+            //window.location=url;
+        }else{
+            /* Restamos un segundo al tiempo restante */
+            totalTiempo-=1;
+            /* Ejecutamos nuevamente la función al pasar 1000 milisegundos (1 segundo) */
+            setTimeout("updateReloj()",1000);
+        }
+    }
+ 
+    window.onload=updateReloj;
+ 
+    </script>-->
+
     </head>
     <body id="v_ataque">
         <header>    
@@ -100,16 +139,20 @@
                 <div class="col-md-0 col-md-offset-0"></div>
 
                 <div class="col-md-2 col-md-offset-0">
-                    <form action="MejorarAtaque" method="POST">
-                    <input type="image" src="img/defensa/mejorar.png" class="img-responsive" alt="Mejorar Ataque">
-<!--                    <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">-->
-                    <h5 class="text-center">Mejorar Ataque</h5>
-                    </form>
+                    <!--                    <form action="MejorarAtaque" method="POST">
+                                            <input type="image" src="img/defensa/mejorar.png" class="img-responsive" alt="Mejorar Ataque">
+                                                                <img src="img/defensa/mejorar.png" class="img-responsive" alt="Responsive image">
+                                            <h5 class="text-center">Mejorar Ataque</h5>
+                                        </form>-->
+                    <a href="#" onclick="setInfoFabrica();">
+                        <img src="img/defensa/mejorar.png" class="img-responsive" alt="Información Fábrica">
+                        <h5 class="text-center">Mejorar Ataque</h5>
+                    </a>
                 </div>
 
                 <div class="col-md-2 col-md-offset-0">
                     <a href="#" onclick="setInfoAtaque('peloton', <%= nivel%>);">
-                        <img src="img/ataque/peloton.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/ataque/peloton.png" class="img-responsive" alt="Peloton">
                         <h5 class="text-center">Peloton (<%= numPeloton%>) </h5>
                     </a>
                 </div>
@@ -117,44 +160,44 @@
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 1) {%>
                     <a href="#" onclick="setInfoAtaque('vehiculoBlindado', <%= nivel%>);">
-                        <img src="img/ataque/vehiculoblindado.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/ataque/vehiculoblindado.png" class="img-responsive" alt="Hehiculo Blindado">
                         <h5 class="text-center">Vehículo Blindado (<%= numVehiculoBlindado%>) </h5>
                     </a>
                     <%} else {%>
-                    <img src="img/ataque/vehiculoblindadoDisabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/vehiculoblindadoDisabled.png" class="img-responsive" alt="Hehiculo Blindado">
                     <h5 class="text-center">Vehículo Blindado</h5>
                     <%}%>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 2) {%>
                     <a href="#" onclick="setInfoAtaque('helicoptero', <%= nivel%>);">
-                        <img src="img/ataque/apache.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/ataque/apache.png" class="img-responsive" alt="Helicoptero">
                         <h5 class="text-center">Helicóptero (<%= numHelicoptero%>) </h5>
                     </a>
                     <%} else {%>
-                    <img src="img/ataque/apacheDisabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/apacheDisabled.png" class="img-responsive" alt="Helicoptero">
                     <h5 class="text-center">Helicóptero</h5>
                     <%}%>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 3) {%>
                     <a href="#" onclick="setInfoAtaque('avionCombate', <%= nivel%>);">
-                        <img src="img/ataque/caza.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/ataque/caza.png" class="img-responsive" alt="Avion Combate">
                         <h5 class="text-center">Avión Combate (<%= numAvionCombate%>) </h5>
                     </a>
                     <%} else {%>
-                    <img src="img/ataque/cazaDisabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/cazaDisabled.png" class="img-responsive" alt="Avion Combate">
                     <h5 class="text-center">Avión Combate</h5>
                     <%}%>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
                     <% if (nivel > 4) {%>
                     <a href="#" onclick="setInfoAtaque('chuckNorris', <%= nivel%>);">
-                        <img src="img/ataque/chuck2.png" class="img-responsive" alt="Responsive image">
+                        <img src="img/ataque/chuck2.png" class="img-responsive" alt="Chuck Norris">
                         <h5 class="text-center">Chuck Norris (<%= numChuckNorris%>) </h5>
                     </a>
                     <%} else {%>
-                    <img src="img/ataque/chuck2Disabled.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/chuck2Disabled.png" class="img-responsive" alt="Chuck Norris">
                     <h5 class="text-center">Chuck Norris</h5>
                     <%}%>
                 </div>

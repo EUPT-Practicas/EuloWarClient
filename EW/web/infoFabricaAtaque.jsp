@@ -1,6 +1,6 @@
 <%-- 
-    Document   : infoPeloton
-    Created on : 05-jun-2015, 16:13:06
+    Document   : infoFabricaAtaque
+    Created on : 11-jun-2015, 17:21:01
     Author     : Sergio
 --%>
 
@@ -23,7 +23,6 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
 
     String nombreUsuario = usuario.getNombreUsuario();
     String email = usuario.getEmail();
-        String nivelF = request.getParameter("nivelF");
     ClienteTropas ct = new ClienteTropas();
                 int nivel = ct.getNivelFabricaAtaque(email);
                 System.err.println("nivel F: " + nivel);
@@ -51,13 +50,13 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
 </div> 
 <div class="col-md-5 col-md-offset-0">
     </br>
-    <img src="img/ataque/peloton.png" class="img-responsive " alt="Pelotón">
+    <img src="img/defensa/mejorar.png" class="img-responsive " alt="Información de Fábrica Ofensiva">
 </div>
 <div class="row">
 
     <div class="col-md-5 col-md-offset-0">
         <div class="row">
-            <h1 class="">Pelotón</h1>
+            <h1 class="">Fábrica Ofensiva</h1>
         </div>
         <div class="row">
             <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
@@ -72,24 +71,11 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
         <div class="row">
             <h5 class="">Coste de mejora: 5.000 Hierro</h5>
         </div>
-        <div class="row text-center">
-            <h5 class=""><b>Nº Tropas adquiridas:</b> <%= numPeloton%></h5>
-        </div>
+        <div id="seccionContador"></div>
         <div class="panel  col-md-9 col-md-offset-1">
             <div class="col-md-6 col-md-offset-0">
-                <div class="input-group number-spinner">
-                    <span class="input-group-btn data-dwn">
-                        <button class="btn btn-primary" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                    </span>
-                    <input id="numTropasSpinner" type="text" class="form-control text-center" value="1" min="1" max="40" readonly>
-                    <span class="input-group-btn data-up">
-                        <button class="btn btn-primary " data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-6 col-md-offset-0">
-                <a onclick="comprarTropasOfensivas('PELOTON');">
-                <button type="button" class="btn btn-primary col-md-12 ">Comprar</button>
+                <a onclick="mejorarFabricaAtaque();">
+                <button type="button" class="btn btn-primary col-md-12">Mejorar Fábrica</button>
                 </a>
             </div>
         </div>
@@ -112,3 +98,4 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
 
 </div>-->
 </br> 
+

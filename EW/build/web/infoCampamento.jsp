@@ -31,7 +31,7 @@
     <h5><strong>Nivel: C</strong></h5>
 </div> 
 <div class="col-md-5 col-md-offset-0">
-    <img src="img/campamento/ArmyCamp.png" class="img-responsive " alt="Responsive image">
+    <img src="img/campamento/ArmyCamp.png" class="img-responsive " alt="Información de Campamento">
 </div>
 <div class="row">
 
@@ -40,7 +40,7 @@
             <h1 class="">Campamento</h1>
         </div>
         <div class="row">
-            <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
+            <h5 class="">Descripción: Aqui una breve descripción de cual es su función el juego</h5>
             </br>
         </div>
         <div class="row">

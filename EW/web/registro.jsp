@@ -19,8 +19,7 @@
     <body>
         <div class="container">
             <header class="row">
-                <img src="./img/logotipo.png" class="img-responsive  col-md-3 col-md-offset-0" alt="Logo EuloWar">
-                
+                <a href="index.jsp"><img src="./img/logotipo.png" class="img-responsive  col-md-3 col-md-offset-0" alt="Logotipo EuloWar"></a>   
             </header>
            
         <div class="row">

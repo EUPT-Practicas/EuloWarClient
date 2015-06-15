@@ -12,7 +12,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>EuloWar</title>
+        <title>EuloWar - Tu juego de estrategia online.</title>
         <link href="css/newcss.css" rel="stylesheet" media="screen">
         <!-- CSS de Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -37,7 +37,7 @@
                     <div  class="panel panel-default col-md-4 col-md-offset-4">
 
                         <!--<h4 class="text-center">Registrado</h4>-->
-                        <img src="./img/logotipo.png" class="img-responsive " alt="Logo EuloWar">
+                        <a href="index.jsp"><img src="./img/logotipo.png" class="img-responsive " alt="Logotipo EuloWar"></a>
                         <div id="seccionErrores" class="row col-md-10 col-md-offset-1">
 
                         </div>

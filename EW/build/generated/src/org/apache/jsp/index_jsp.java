@@ -57,7 +57,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta charset=\"utf-8\">\r\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n");
-      out.write("        <title>EuloWar</title>\r\n");
+      out.write("        <title>EuloWar - Tu juego de estrategia online.</title>\r\n");
       out.write("        <link href=\"css/newcss.css\" rel=\"stylesheet\" media=\"screen\">\r\n");
       out.write("        <!-- CSS de Bootstrap -->\r\n");
       out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">\r\n");
@@ -86,7 +86,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div  class=\"panel panel-default col-md-4 col-md-offset-4\">\r\n");
       out.write("\r\n");
       out.write("                        <!--<h4 class=\"text-center\">Registrado</h4>-->\r\n");
-      out.write("                        <img src=\"./img/logotipo.png\" class=\"img-responsive \" alt=\"Logo EuloWar\">\r\n");
+      out.write("                        <a href=\"index.jsp\"><img src=\"./img/logotipo.png\" class=\"img-responsive \" alt=\"Logotipo EuloWar\"></a>\r\n");
       out.write("                        <div id=\"seccionErrores\" class=\"row col-md-10 col-md-offset-1\">\r\n");
       out.write("\r\n");
       out.write("                        </div>\r\n");
@@ -98,12 +98,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!-- Formulario de inicio sesion -->\r\n");
       out.write("<form action=\"Login\" method=\"POST\">\r\n");
       out.write("    <div class=\"form-group\">\r\n");
-      out.write("        <label for=\"ejemplo_password_1\">Usuario</label>\r\n");
+      out.write("        <label>Usuario</label>\r\n");
       out.write("        <input type=\"text\" class=\"form-control\" name=\"nombre\" placeholder=\"Nombre de usuario\">\r\n");
       out.write("    </div>\r\n");
       out.write("\r\n");
       out.write("    <div class=\"form-group\">\r\n");
-      out.write("        <label for=\"ejemplo_password_1\">Contraseña</label>\r\n");
+      out.write("        <label>Contraseña</label>\r\n");
       out.write("        <input type=\"password\" class=\"form-control\" name=\"password\" id=\"ejemplo_password_1\" \r\n");
       out.write("               placeholder=\"Contraseña\">\r\n");
       out.write("    </div>\r\n");
@@ -117,7 +117,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </h5>\r\n");
       out.write("    <h5 class=\"text-center\">\r\n");
       out.write("        ¿No tienes cuenta?\r\n");
-      out.write("        <a href=\"#\" onClick=\"mostrarRegistro();\" > Registrate</a>\r\n");
+      out.write("        <a href=\"#\" onClick=\"mostrarRegistro();\" > Regístrate</a>\r\n");
       out.write("    </h5>\r\n");
       out.write("    </br>\r\n");
       out.write("</form>\r\n");
