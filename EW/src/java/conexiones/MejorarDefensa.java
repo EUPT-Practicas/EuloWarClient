@@ -21,7 +21,7 @@ import threadsTiempo.GestorThreads;
  * @author Sergio
  */
 public class MejorarDefensa extends HttpServlet {
-    
+
     private final int PRECIO_FABRICA_DEFENSA = 500;
 
     /**
@@ -44,18 +44,21 @@ public class MejorarDefensa extends HttpServlet {
             HttpSession miSession = request.getSession();
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
-            
+
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
-            String resultadoRecursos = crm.restarRecursos(nivel*PRECIO_FABRICA_DEFENSA, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
-            
+            String resultadoRecursos = crm.restarRecursos(nivel * PRECIO_FABRICA_DEFENSA, email); //OBTENER NIVEL FABRICAR PARA UNIDADES.
+
             if (resultadoRecursos.equals("INSUFICIENTES_RECURSOS")) {
                 //NO TIENES RECURSOS... HACER ALGO...
                 System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
+                String mensaje = "No hay recursos suficientes.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("defensa.jsp").forward(request, response);
             } else if (resultadoRecursos.equals("OK")) {
                 GestorThreads.getInstance().crearThreadMejorarDefensa(email);
-            
+
                 response.sendRedirect("defensa.jsp");
-            
+
             }
         }
     }

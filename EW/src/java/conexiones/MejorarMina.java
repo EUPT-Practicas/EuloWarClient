@@ -6,12 +6,15 @@
 package conexiones;
 
 import cliente_webservice.ClienteRecursosMinas;
+import clientes_WS.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import operacionesminas_client.Mina;
 import threadsTiempo.GestorThreads;
 
 /**
@@ -36,8 +39,36 @@ public class MejorarMina extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             System.err.println("- - - ENTRA A POST MEJORAR MINA - - -");
             int idmina = Integer.valueOf(request.getParameter("IdMina"));
-            System.err.println("LA mina a mejorar es: " + idmina);
-            GestorThreads.getInstance().crearThreadMejoraMina(idmina);
+
+            HttpSession miSession = request.getSession();
+            Usuario usuario = (Usuario) miSession.getAttribute("usuario");
+            String email = usuario.getEmail();
+
+            ClienteRecursosMinas crm = new ClienteRecursosMinas();
+
+            int nivelActualizar = crm.getMina(idmina).getNivelMina() + 1;
+
+            if (nivelActualizar > 5) {
+                String mensaje = "La mina no puede ser mejorada";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("minas.jsp").forward(request, response);
+            }
+
+            String resultado = crm.restarRecursos(crm.obtenerNivelMina(nivelActualizar).getPrecio(), email);
+            switch (resultado) {
+                case "INSUFICIENTES_RECURSOS":
+                    String mensaje = "No hay recursos suficientes. Se requieren: " + crm.obtenerNivelMina(nivelActualizar).getPrecio();
+                    request.setAttribute("mensaje", mensaje);
+                    request.getRequestDispatcher("minas.jsp").forward(request, response);
+                    break;
+                case "OK":
+                    System.err.println("LA mina a mejorar es: " + idmina);
+                    GestorThreads.getInstance().crearThreadMejoraMina(idmina);
+      
+                    response.sendRedirect("minas.jsp");
+                    break;
+            }
+
         }
     }
 

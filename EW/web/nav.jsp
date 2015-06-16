@@ -22,6 +22,7 @@
                         <li><a href="defensa.jsp">Defensa</a></li>
                         <li><a href="ataque.jsp">Ataque</a></li>
                         <li><a href="campamentos.jsp">Campamentos</a></li>
+                        <li><a href="atacar.jsp">Atacar</a></li>
 
                     </ul>
 

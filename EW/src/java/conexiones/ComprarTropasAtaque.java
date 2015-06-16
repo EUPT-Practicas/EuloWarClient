@@ -84,6 +84,10 @@ public class ComprarTropasAtaque extends HttpServlet {
             if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
                 //NO TIENES RECURSOS... HACER ALGO...
                 System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
+                String mensaje = "No hay recursos suficientes.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("ataque.jsp").forward(request, response);
+                
             } else if (respuestaPrecio.equals("OK")) {
 
                 System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);

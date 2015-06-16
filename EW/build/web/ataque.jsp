@@ -113,7 +113,7 @@
     </script>-->
 
     </head>
-    <body id="v_ataque">
+    <body id="v_ataque" onload="mostrarErrorRecursos('${mensaje}');">
         <header>    
             <%@ include file='header.jsp' %>
         </header>

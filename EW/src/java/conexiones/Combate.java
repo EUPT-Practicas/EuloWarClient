@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import operacionescombates_WS.Usuario;
 
 /**
@@ -39,29 +40,39 @@ public class Combate extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String emailUsuario = request.getParameter("emailUsuario");
+            HttpSession miSession = request.getSession();
+            clientes_WS.Usuario usuario = (clientes_WS.Usuario) miSession.getAttribute("usuario");
+            String emailUsuario = usuario.getEmail();
+
             ClienteCombates cc = new ClienteCombates();
             Usuario rival = cc.elegirRival(emailUsuario);
             String emailRival = rival.getEmail();
             Usuario ganador = cc.simularCombate(emailUsuario, emailRival);
             String emailGanador = ganador.getEmail();
-            
+
             ClienteTropas ct = new ClienteTropas();
             ct.eliminarTropasOfensivas(emailUsuario);
-            
+
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
             int recursosRival = crm.obtenerRecursos(emailRival);
-            
-            if (emailGanador.equals(emailUsuario)){
+
+            if (emailGanador.equals(emailUsuario)) {
                 System.out.println("HAS GANADO!!");
                 //MOSTRAR MENSAJE DE VICTORIA ... SUMAR RECURSOS... RESTAR TROPAS
-                int recursosASumar = (int) ((int)  recursosRival*0.5);
+                String mensaje = "¡¡EXITO!! Has ganado el combate, tus recursos se doblaran.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("atacar.jsp").forward(request, response);
+
+                int recursosASumar = (int) ((int) recursosRival * 0.5);
                 System.out.println("RECURSOS RIVAL: " + recursosRival + " ----- RECURSOS A SUMAR: " + recursosASumar);
                 crm.sumarRecursos(recursosASumar, emailUsuario);
                 crm.restarRecursos(recursosASumar, emailRival);
             } else {
                 System.out.println("HAS PERDIDO");
                 //MOSTRAR MENSAJE DE DERROTA... RESTAR TROPAS
+                String mensaje = "¡¡OHH, PERDISTE!! Has perdido el combate.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("atacar.jsp").forward(request, response);
             }
         }
     }

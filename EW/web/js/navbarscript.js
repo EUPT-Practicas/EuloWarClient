@@ -11,6 +11,7 @@ $(function() {
         $("#v_defensa a:contains('Defensa')").parent().addClass('active');
         $("#v_ataque a:contains('Ataque')").parent().addClass('active');
         $("#v_campamentos a:contains('Campamentos')").parent().addClass('active');
+        $("#v_atacar a:contains('Atacar')").parent().addClass('active');
 	
 }); //jQuery is loaded
 

@@ -95,7 +95,7 @@
 
         </script>
     </head>
-    <body id="v_defensa">
+    <body id="v_defensa" onload="mostrarErrorRecursos('${mensaje}');">
         <header>    
             <%@ include file='header.jsp' %>
         </header>

@@ -51,6 +51,16 @@ function mejorarMina(_idMina) {
     });
 }
 
+function lanzarAtaque(){
+    console.log("LANZAR ATAQUE");
+        $.ajax({
+        type: "POST",
+        url: "Combate",
+        success: function (msg) {
+        }
+    });
+}
+
 function mejorarFabricaAtaque(_nivelFabrica) {
     console.log("MEJORAR ATAQUE" + _nivelFabrica);
     $.ajax({

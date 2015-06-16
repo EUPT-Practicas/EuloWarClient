@@ -23,14 +23,14 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "ComprarTropasDefensa", urlPatterns = {"/ComprarTropasDefensa"})
 public class ComprarTropasDefensa extends HttpServlet {
-    
+
     private final int PRECIO_CAMPO_MINAS = 50;
     private final int PRECIO_TRINCHERA_AMETRALLADORAS = 100;
     private final int PRECIO_CANYON_COMBATE = 200;
     private final int PRECIO_CANYON_ANTIAEREO = 400;
     private final int PRECIO_MISIL_ANTIAEREO = 800;
     private final int PRECIO_RAMBO = 1600;
-    
+
     private final String D_MISIL_ANTIAEREO = "MISIL_ANTIAEREO";
     private final String D_TRINCHERA_AMETRALLADORAS = "TRINCHERA_AMETRALLADORAS";
     private final String D_RAMBO = "RAMBO";
@@ -87,6 +87,9 @@ public class ComprarTropasDefensa extends HttpServlet {
             if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
                 //NO TIENES RECURSOS... HACER ALGO...
                 System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
+                String mensaje = "No hay recursos suficientes.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("defensa.jsp").forward(request, response);
             } else if (respuestaPrecio.equals("OK")) {
 
                 System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);

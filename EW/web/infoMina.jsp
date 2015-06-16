@@ -30,7 +30,7 @@
     }
 %>
 
-<div class="col-md-1 col-md-offset-11 text-right">
+<div class="col-md-1 col-md-offset-11 text-right" onload="mostrarErrorRecursos('${mensaje}');">
     <h5 ><strong id="nivelMina">Nivel: <%= nivelActualmina%></strong></h5>
     <!--                    <h5 ><strong id="dos">Global:</strong></h5>-->
 
