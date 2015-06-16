@@ -29,6 +29,7 @@ public class ObjectFactory {
     private final static QName _Campamento_QNAME = new QName("http://webservices/", "campamento");
     private final static QName _GetTropaAtaqueResponse_QNAME = new QName("http://webservices/", "getTropaAtaqueResponse");
     private final static QName _AgregarTropasOfensivasResponse_QNAME = new QName("http://webservices/", "agregarTropasOfensivasResponse");
+    private final static QName _EliminarTropasOfensivasResponse_QNAME = new QName("http://webservices/", "eliminarTropasOfensivasResponse");
     private final static QName _MejorarTropaOfensivaResponse_QNAME = new QName("http://webservices/", "mejorarTropaOfensivaResponse");
     private final static QName _FabricaDefensiva_QNAME = new QName("http://webservices/", "fabricaDefensiva");
     private final static QName _AgregarTropasDefensivasResponse_QNAME = new QName("http://webservices/", "agregarTropasDefensivasResponse");
@@ -48,6 +49,7 @@ public class ObjectFactory {
     private final static QName _AgregarTropasDefensivas_QNAME = new QName("http://webservices/", "agregarTropasDefensivas");
     private final static QName _GetTropaDefensaResponse_QNAME = new QName("http://webservices/", "getTropaDefensaResponse");
     private final static QName _MejorarFabricaOfensivaResponse_QNAME = new QName("http://webservices/", "mejorarFabricaOfensivaResponse");
+    private final static QName _EliminarTropasOfensivas_QNAME = new QName("http://webservices/", "eliminarTropasOfensivas");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
     private final static QName _GetTropaDefensa_QNAME = new QName("http://webservices/", "getTropaDefensa");
 
@@ -80,6 +82,14 @@ public class ObjectFactory {
      */
     public MejorarFabricaOfensivaResponse createMejorarFabricaOfensivaResponse() {
         return new MejorarFabricaOfensivaResponse();
+    }
+
+    /**
+     * Create an instance of {@link EliminarTropasOfensivas }
+     * 
+     */
+    public EliminarTropasOfensivas createEliminarTropasOfensivas() {
+        return new EliminarTropasOfensivas();
     }
 
     /**
@@ -227,6 +237,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link EliminarTropasOfensivasResponse }
+     * 
+     */
+    public EliminarTropasOfensivasResponse createEliminarTropasOfensivasResponse() {
+        return new EliminarTropasOfensivasResponse();
+    }
+
+    /**
      * Create an instance of {@link GetTropaAtaqueResponse }
      * 
      */
@@ -309,6 +327,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "agregarTropasOfensivasResponse")
     public JAXBElement<AgregarTropasOfensivasResponse> createAgregarTropasOfensivasResponse(AgregarTropasOfensivasResponse value) {
         return new JAXBElement<AgregarTropasOfensivasResponse>(_AgregarTropasOfensivasResponse_QNAME, AgregarTropasOfensivasResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarTropasOfensivasResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "eliminarTropasOfensivasResponse")
+    public JAXBElement<EliminarTropasOfensivasResponse> createEliminarTropasOfensivasResponse(EliminarTropasOfensivasResponse value) {
+        return new JAXBElement<EliminarTropasOfensivasResponse>(_EliminarTropasOfensivasResponse_QNAME, EliminarTropasOfensivasResponse.class, null, value);
     }
 
     /**
@@ -480,6 +507,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "mejorarFabricaOfensivaResponse")
     public JAXBElement<MejorarFabricaOfensivaResponse> createMejorarFabricaOfensivaResponse(MejorarFabricaOfensivaResponse value) {
         return new JAXBElement<MejorarFabricaOfensivaResponse>(_MejorarFabricaOfensivaResponse_QNAME, MejorarFabricaOfensivaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarTropasOfensivas }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "eliminarTropasOfensivas")
+    public JAXBElement<EliminarTropasOfensivas> createEliminarTropasOfensivas(EliminarTropasOfensivas value) {
+        return new JAXBElement<EliminarTropasOfensivas>(_EliminarTropasOfensivas_QNAME, EliminarTropasOfensivas.class, null, value);
     }
 
     /**

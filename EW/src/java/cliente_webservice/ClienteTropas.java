@@ -77,7 +77,11 @@ public class ClienteTropas {
         operacionesTropas_WS.OperacionesTropas port = service.getOperacionesTropasPort();
         return port.getNivelFabricaDefensa(emailUsuario);
     }
-    
-    
+
+    public boolean eliminarTropasOfensivas(java.lang.String emailUsuario) {
+        operacionesTropas_WS.OperacionesTropas_Service service = new operacionesTropas_WS.OperacionesTropas_Service();
+        operacionesTropas_WS.OperacionesTropas port = service.getOperacionesTropasPort();
+        return port.eliminarTropasOfensivas(emailUsuario);
+    }
     
 }

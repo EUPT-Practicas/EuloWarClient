@@ -138,5 +138,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/operacionesTropas_WS"/>
         <delete dir="${build.generated.dir}/jax-wsCache/OperacionesTropas"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario, wsimport-client-OperacionesCampamento, wsimport-client-OperacionesTropas"/>
+    <target name="wsimport-client-OperacionesCombates" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OperacionesCombates"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OperacionesCombates" destdir="${build.generated.dir}/jax-wsCache/OperacionesCombates" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesCombates/wsdl/localhost_8080/OperacionesCombates/OperacionesCombates.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/OperacionesCombates/OperacionesCombates?WSDL" xnocompile="true" xendorsed="true" package="operacionescombates_WS">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OperacionesCombates/wsdl/localhost_8080/OperacionesCombates/OperacionesCombates.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OperacionesCombates"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OperacionesCombates">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OperacionesCombates" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/operacionescombates_WS"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OperacionesCombates"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio, wsimport-client-OperacionesMinas, wsimport-client-OperacionesRecursos, wsimport-client-GestionPerfilUsuario, wsimport-client-OperacionesCampamento, wsimport-client-OperacionesTropas, wsimport-client-OperacionesCombates"/>
 </project>

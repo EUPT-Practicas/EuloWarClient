@@ -10,6 +10,10 @@
 
 <xs:element name="campamento" type="tns:campamento"/>
 
+<xs:element name="eliminarTropasOfensivas" type="tns:eliminarTropasOfensivas"/>
+
+<xs:element name="eliminarTropasOfensivasResponse" type="tns:eliminarTropasOfensivasResponse"/>
+
 <xs:element name="fabricaDefensiva" type="tns:fabricaDefensiva"/>
 
 <xs:element name="fabricaOfensiva" type="tns:fabricaOfensiva"/>
@@ -198,6 +202,20 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="agregarTropasDefensivas">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarTropasDefensivasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="mejorarFabricaDefensiva">
 <xs:sequence>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
@@ -210,15 +228,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="agregarTropasDefensivas">
+<xs:complexType name="eliminarTropasOfensivas">
 <xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="tipo" type="xs:string" minOccurs="0"/>
-<xs:element name="unidades" type="xs:int"/>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="agregarTropasDefensivasResponse">
+<xs:complexType name="eliminarTropasOfensivasResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

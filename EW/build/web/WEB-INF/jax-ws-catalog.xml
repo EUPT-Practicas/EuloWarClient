@@ -20,4 +20,6 @@
     <system systemId="http://localhost:8080/OperacionesCampamento/OperacionesCampamento?xsd=1" uri="wsdl/localhost_8080/OperacionesCampamento/OperacionesCampamento.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/OperacionesTropas/OperacionesTropas?WSDL" uri="wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.wsdl"/>
     <system systemId="http://localhost:8080/OperacionesTropas/OperacionesTropas?xsd=1" uri="wsdl/localhost_8080/OperacionesTropas/OperacionesTropas.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OperacionesCombates/OperacionesCombates?WSDL" uri="wsdl/localhost_8080/OperacionesCombates/OperacionesCombates.wsdl"/>
+    <system systemId="http://localhost:8080/OperacionesCombates/OperacionesCombates?xsd=1" uri="wsdl/localhost_8080/OperacionesCombates/OperacionesCombates.xsd_1.xsd"/>
 </catalog>
