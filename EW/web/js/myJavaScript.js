@@ -68,6 +68,7 @@ function mejorarFabricaAtaque(_nivelFabrica) {
         url: "MejorarAtaque",
         data: "nivelFabrica=" + _nivelFabrica,
         success: function (msg) {
+            document.location.reload(true);
         }
     });
     //setContador();
@@ -80,7 +81,7 @@ function mejorarFabricaDefensa(_nivelFabrica) {
         url: "MejorarDefensa", //por hacer
         data: "nivelFabrica=" + _nivelFabrica,
         success: function (msg) {
-
+            document.location.reload(true);
         }
     });
     //setContador();
@@ -93,6 +94,7 @@ function comprarTropasOfensivas(_tipoTropa) {
         url: "ComprarTropasAtaque",
         data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
         success: function (msg) {
+            document.location.reload(true);
             //num = document.getElementById("tropasAdquiridas").value + document.getElementById("numTropasSpinner").value;
             num = parseInt(document.getElementById("tropasAdquiridas").value) + parseInt(document.getElementById("numTropasSpinner").value);
             console.log("NUM: " + num);
@@ -119,7 +121,7 @@ function comprarTropasDefensivas(_tipoTropa) {
         url: "ComprarTropasDefensa", //por hacer
         data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
         success: function (msg) {
-
+            document.location.reload(true);
         }
     });
 }

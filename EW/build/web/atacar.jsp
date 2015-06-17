@@ -37,8 +37,14 @@
                     </br>
                     <center><h5>Tus soldados están impacientes por atacar. Tan sólo tienes que darles la orden para invadir al enemigo. </h5></center>
                     </br>
-                    <a href="#" onclick="lanzarAtaque();">
-                    <button type="button" class="btn btn-primary col-md-2 col-md-offset-5">¡ A t a c a r !</button>
+                    <!--<a href="#" onclick="lanzarAtaque();">-->
+                    <form action="Combate" method="POST">
+                        <!--                    <a onclick="nuevaMina();">-->
+<!--                        <img src="img/minas/nueva_mina.png" class="img-responsive" alt="Nueva mina">-->
+                        <button type="submit" class="btn btn-primary col-md-2 col-md-offset-5">¡ A t a c a r !</button>
+                        <!--                    </a>-->
+                    </form>
+                    
                     </a>
                     </br>
                     </br>
