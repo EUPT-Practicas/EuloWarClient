@@ -5,6 +5,7 @@
  */
 package conexiones;
 
+import cliente_webservice.ClienteCampamento;
 import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteTropas;
 import clientes_WS.Usuario;
@@ -28,6 +29,13 @@ public class ComprarTropasAtaque extends HttpServlet {
     private final String A_VEHICULO_BLINDADO = "VEHICULO_BLINDADO";
     private final String A_HELICOPTERO = "HELICOPTERO";
     private final String A_CHUCK_NORRIS = "CHUCK_NORRIS";
+
+    private final int OCUPACION_PELOTON = 5;
+    private final int OCUPACION_VEHICULO_BLINDADO = 10;
+    private final int OCUPACION_TANQUE = 20;
+    private final int OCUPACION_HELICOPTERO = 40;
+    private final int OCUPACION_AVION_COMBATE = 80;
+    private final int OCUPACION_CHUCK_NORRIS = 160;
 
     private final int PRECIO_PELOTON_1 = 50;
     private final int PRECIO_VEHICULO_BLINDADO = 100;
@@ -57,44 +65,72 @@ public class ComprarTropasAtaque extends HttpServlet {
             Usuario usuario = (Usuario) miSession.getAttribute("usuario");
             String email = usuario.getEmail();
 
-            //CALCULAR PRECIO Y COMPROBAR
+            //CALCULAR PRECIO, CAPACIDAD Y COMPROBAR
             int precioTropas = 0;
+            int capacidadTotal = 0;
             switch (tipoTropa) {
                 case A_AVION_COMBATE:
                     precioTropas = numTropas * PRECIO_AVION_COMBATE;
+                    capacidadTotal = numTropas * OCUPACION_AVION_COMBATE;
                     break;
                 case A_CHUCK_NORRIS:
                     precioTropas = numTropas * PRECIO_CHUCK_NORRIS;
+                    capacidadTotal = numTropas * OCUPACION_CHUCK_NORRIS;
                     break;
                 case A_HELICOPTERO:
                     precioTropas = numTropas * PRECIO_HELICOPTERO;
+                    capacidadTotal = numTropas * OCUPACION_HELICOPTERO;
                     break;
                 case A_PELOTON:
                     precioTropas = numTropas * PRECIO_PELOTON_1;
+                    capacidadTotal = numTropas * OCUPACION_PELOTON;
                     break;
                 case A_TANQUE:
                     precioTropas = numTropas * PRECIO_TANQUE;
+                    capacidadTotal = numTropas * OCUPACION_TANQUE;
                     break;
                 case A_VEHICULO_BLINDADO:
                     precioTropas = numTropas * PRECIO_VEHICULO_BLINDADO;
+                    capacidadTotal = numTropas * OCUPACION_VEHICULO_BLINDADO;
                     break;
             }
-            ClienteRecursosMinas crm = new ClienteRecursosMinas();
-            String respuestaPrecio = crm.restarRecursos(precioTropas, email);
-            if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
-                //NO TIENES RECURSOS... HACER ALGO...
-                System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
-                String mensaje = "No hay recursos suficientes.";
+
+            ClienteCampamento ccampamentos = new ClienteCampamento();
+            String respuestaCampamentos = ccampamentos.agregarTropasCampamento(capacidadTotal, email);
+            if (respuestaCampamentos.equals("NO_ESPACIO")) {
+                //NO HAY ESPACIO
+                System.out.println("NO TIENES ESPACIO, CABEZON!!!");
+                String mensaje = "No tienes espacio en tus campamentos.";
                 request.setAttribute("mensaje", mensaje);
                 request.getRequestDispatcher("ataque.jsp").forward(request, response);
-                
-            } else if (respuestaPrecio.equals("OK")) {
+            } else if (respuestaCampamentos.equals("OK")) {
 
-                System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
-                ClienteTropas ct = new ClienteTropas();
-                ct.agregarTropasOfensivas(email, tipoTropa, numTropas);
+                ClienteRecursosMinas crm = new ClienteRecursosMinas();
+                String respuestaPrecio = crm.restarRecursos(precioTropas, email);
+                if (respuestaPrecio.equals("INSUFICIENTES_RECURSOS")) {
+                    //NO TIENES RECURSOS... HACER ALGO...
+                    System.out.println("NO TIENES RECURSOS GAÑAN!!!!1");
+                    String mensaje = "No hay recursos suficientes.";
+                    request.setAttribute("mensaje", mensaje);
+                    request.getRequestDispatcher("ataque.jsp").forward(request, response);
 
-                response.sendRedirect("ataque.jsp");
+                } else if (respuestaPrecio.equals("OK")) {
+
+                    ClienteTropas ct = new ClienteTropas();
+                    ct.agregarTropasOfensivas(email, tipoTropa, numTropas);
+
+                    response.sendRedirect("ataque.jsp");
+                    
+                    /////////////////////////////////////////////
+                    //PONER UN MENSAJE DE QUE SE CREAN LAS TROPAS
+                    /////////////////////////////////////////////
+
+                    System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
+
+                }
+
+            } else {
+                System.out.println("PROBLEMOOOOOOOOOOOOOOOOOOOOOOOOOOOON");
             }
 
         }

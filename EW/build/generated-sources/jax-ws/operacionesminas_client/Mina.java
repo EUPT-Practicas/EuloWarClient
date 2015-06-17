@@ -17,9 +17,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="deposito" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="actualizando" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="FKMinaRecurso" type="{http://webservices/}recurso" minOccurs="0"/>
  *         &lt;element name="FKMinaUsuario" type="{http://webservices/}usuario" minOccurs="0"/>
+ *         &lt;element name="horaUltimaActualizacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="idMina" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="nivelMina" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="tipoMina" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -33,38 +34,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "mina", propOrder = {
-    "deposito",
+    "actualizando",
     "fkMinaRecurso",
     "fkMinaUsuario",
+    "horaUltimaActualizacion",
     "idMina",
     "nivelMina",
     "tipoMina"
 })
 public class Mina {
 
-    protected int deposito;
+    protected int actualizando;
     @XmlElement(name = "FKMinaRecurso")
     protected Recurso fkMinaRecurso;
     @XmlElement(name = "FKMinaUsuario")
     protected Usuario fkMinaUsuario;
+    protected String horaUltimaActualizacion;
     protected Integer idMina;
     protected int nivelMina;
     protected String tipoMina;
 
     /**
-     * Obtiene el valor de la propiedad deposito.
+     * Obtiene el valor de la propiedad actualizando.
      * 
      */
-    public int getDeposito() {
-        return deposito;
+    public int getActualizando() {
+        return actualizando;
     }
 
     /**
-     * Define el valor de la propiedad deposito.
+     * Define el valor de la propiedad actualizando.
      * 
      */
-    public void setDeposito(int value) {
-        this.deposito = value;
+    public void setActualizando(int value) {
+        this.actualizando = value;
     }
 
     /**
@@ -113,6 +116,30 @@ public class Mina {
      */
     public void setFKMinaUsuario(Usuario value) {
         this.fkMinaUsuario = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad horaUltimaActualizacion.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHoraUltimaActualizacion() {
+        return horaUltimaActualizacion;
+    }
+
+    /**
+     * Define el valor de la propiedad horaUltimaActualizacion.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHoraUltimaActualizacion(String value) {
+        this.horaUltimaActualizacion = value;
     }
 
     /**

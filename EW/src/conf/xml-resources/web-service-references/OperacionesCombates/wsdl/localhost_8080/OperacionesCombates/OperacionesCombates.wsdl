@@ -4,31 +4,31 @@
 <xsd:import namespace="http://webservices/" schemaLocation="http://localhost:8080/OperacionesCombates/OperacionesCombates?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="simularCombate">
-<part name="parameters" element="tns:simularCombate"/>
-</message>
-<message name="simularCombateResponse">
-<part name="parameters" element="tns:simularCombateResponse"/>
-</message>
 <message name="elegirRival">
 <part name="parameters" element="tns:elegirRival"/>
 </message>
 <message name="elegirRivalResponse">
 <part name="parameters" element="tns:elegirRivalResponse"/>
 </message>
+<message name="simularCombate">
+<part name="parameters" element="tns:simularCombate"/>
+</message>
+<message name="simularCombateResponse">
+<part name="parameters" element="tns:simularCombateResponse"/>
+</message>
 <portType name="OperacionesCombates">
-<operation name="simularCombate">
-<input wsam:Action="http://webservices/OperacionesCombates/simularCombateRequest" message="tns:simularCombate"/>
-<output wsam:Action="http://webservices/OperacionesCombates/simularCombateResponse" message="tns:simularCombateResponse"/>
-</operation>
 <operation name="elegirRival">
 <input wsam:Action="http://webservices/OperacionesCombates/elegirRivalRequest" message="tns:elegirRival"/>
 <output wsam:Action="http://webservices/OperacionesCombates/elegirRivalResponse" message="tns:elegirRivalResponse"/>
 </operation>
+<operation name="simularCombate">
+<input wsam:Action="http://webservices/OperacionesCombates/simularCombateRequest" message="tns:simularCombate"/>
+<output wsam:Action="http://webservices/OperacionesCombates/simularCombateResponse" message="tns:simularCombateResponse"/>
+</operation>
 </portType>
 <binding name="OperacionesCombatesPortBinding" type="tns:OperacionesCombates">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="simularCombate">
+<operation name="elegirRival">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="elegirRival">
+<operation name="simularCombate">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

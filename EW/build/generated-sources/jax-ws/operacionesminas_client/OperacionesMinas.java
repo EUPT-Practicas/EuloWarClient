@@ -29,31 +29,31 @@ public interface OperacionesMinas {
      * 
      * @param idMina
      * @return
-     *     returns boolean
+     *     returns operacionesminas_client.Mina
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "producirRecursos", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursos")
-    @ResponseWrapper(localName = "producirRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursosResponse")
-    @Action(input = "http://webservices/OperacionesMinas/producirRecursosRequest", output = "http://webservices/OperacionesMinas/producirRecursosResponse")
-    public boolean producirRecursos(
+    @RequestWrapper(localName = "getMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMina")
+    @ResponseWrapper(localName = "getMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMinaResponse")
+    @Action(input = "http://webservices/OperacionesMinas/getMinaRequest", output = "http://webservices/OperacionesMinas/getMinaResponse")
+    public Mina getMina(
         @WebParam(name = "idMina", targetNamespace = "")
         int idMina);
 
     /**
      * 
-     * @param nivelMina
+     * @param email
      * @return
-     *     returns operacionesminas_client.NivelMina
+     *     returns java.util.List<java.lang.Object>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerNivelMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerNivelMina")
-    @ResponseWrapper(localName = "obtenerNivelMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerNivelMinaResponse")
-    @Action(input = "http://webservices/OperacionesMinas/obtenerNivelMinaRequest", output = "http://webservices/OperacionesMinas/obtenerNivelMinaResponse")
-    public NivelMina obtenerNivelMina(
-        @WebParam(name = "nivelMina", targetNamespace = "")
-        int nivelMina);
+    @RequestWrapper(localName = "obtenerMinas", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinas")
+    @ResponseWrapper(localName = "obtenerMinasResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinasResponse")
+    @Action(input = "http://webservices/OperacionesMinas/obtenerMinasRequest", output = "http://webservices/OperacionesMinas/obtenerMinasResponse")
+    public List<Object> obtenerMinas(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
 
     /**
      * 
@@ -87,31 +87,31 @@ public interface OperacionesMinas {
 
     /**
      * 
-     * @param email
+     * @param nivelMina
      * @return
-     *     returns java.util.List<java.lang.Object>
+     *     returns operacionesminas_client.NivelMina
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "obtenerMinas", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinas")
-    @ResponseWrapper(localName = "obtenerMinasResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinasResponse")
-    @Action(input = "http://webservices/OperacionesMinas/obtenerMinasRequest", output = "http://webservices/OperacionesMinas/obtenerMinasResponse")
-    public List<Object> obtenerMinas(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
+    @RequestWrapper(localName = "obtenerNivelMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerNivelMina")
+    @ResponseWrapper(localName = "obtenerNivelMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerNivelMinaResponse")
+    @Action(input = "http://webservices/OperacionesMinas/obtenerNivelMinaRequest", output = "http://webservices/OperacionesMinas/obtenerNivelMinaResponse")
+    public NivelMina obtenerNivelMina(
+        @WebParam(name = "nivelMina", targetNamespace = "")
+        int nivelMina);
 
     /**
      * 
      * @param idMina
      * @return
-     *     returns operacionesminas_client.Mina
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMina")
-    @ResponseWrapper(localName = "getMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.GetMinaResponse")
-    @Action(input = "http://webservices/OperacionesMinas/getMinaRequest", output = "http://webservices/OperacionesMinas/getMinaResponse")
-    public Mina getMina(
+    @RequestWrapper(localName = "producirRecursos", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursos")
+    @ResponseWrapper(localName = "producirRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursosResponse")
+    @Action(input = "http://webservices/OperacionesMinas/producirRecursosRequest", output = "http://webservices/OperacionesMinas/producirRecursosResponse")
+    public boolean producirRecursos(
         @WebParam(name = "idMina", targetNamespace = "")
         int idMina);
 

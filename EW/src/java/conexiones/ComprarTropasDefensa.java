@@ -95,6 +95,10 @@ public class ComprarTropasDefensa extends HttpServlet {
                 System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
                 ClienteTropas ct = new ClienteTropas();
                 ct.agregarTropasDefensivas(email, tipoTropa, numTropas);
+                
+                /////////////////////////////////////////////
+                    //PONER UN MENSAJE DE QUE SE CREAN LAS TROPAS
+                    /////////////////////////////////////////////
 
                 response.sendRedirect("defensa.jsp");
             }

@@ -27,50 +27,38 @@ public interface OperacionesTropas {
     /**
      * 
      * @param email
+     * @param tipo
+     * @param unidades
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "mejorarFabricaDefensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaDefensiva")
-    @ResponseWrapper(localName = "mejorarFabricaDefensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaDefensivaResponse")
-    @Action(input = "http://webservices/OperacionesTropas/mejorarFabricaDefensivaRequest", output = "http://webservices/OperacionesTropas/mejorarFabricaDefensivaResponse")
-    public boolean mejorarFabricaDefensiva(
+    @RequestWrapper(localName = "agregarTropasDefensivas", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.AgregarTropasDefensivas")
+    @ResponseWrapper(localName = "agregarTropasDefensivasResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.AgregarTropasDefensivasResponse")
+    @Action(input = "http://webservices/OperacionesTropas/agregarTropasDefensivasRequest", output = "http://webservices/OperacionesTropas/agregarTropasDefensivasResponse")
+    public boolean agregarTropasDefensivas(
         @WebParam(name = "email", targetNamespace = "")
-        String email);
-
-    /**
-     * 
-     * @param email
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "mejorarFabricaOfensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaOfensiva")
-    @ResponseWrapper(localName = "mejorarFabricaOfensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaOfensivaResponse")
-    @Action(input = "http://webservices/OperacionesTropas/mejorarFabricaOfensivaRequest", output = "http://webservices/OperacionesTropas/mejorarFabricaOfensivaResponse")
-    public boolean mejorarFabricaOfensiva(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
+        String email,
+        @WebParam(name = "tipo", targetNamespace = "")
+        String tipo,
+        @WebParam(name = "unidades", targetNamespace = "")
+        int unidades);
 
     /**
      * 
      * @param emailUsuario
-     * @param tipoTropa
      * @return
-     *     returns operacionesTropas_WS.TropaDefensa
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getTropaDefensa", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaDefensa")
-    @ResponseWrapper(localName = "getTropaDefensaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaDefensaResponse")
-    @Action(input = "http://webservices/OperacionesTropas/getTropaDefensaRequest", output = "http://webservices/OperacionesTropas/getTropaDefensaResponse")
-    public TropaDefensa getTropaDefensa(
+    @RequestWrapper(localName = "eliminarTropasOfensivas", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.EliminarTropasOfensivas")
+    @ResponseWrapper(localName = "eliminarTropasOfensivasResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.EliminarTropasOfensivasResponse")
+    @Action(input = "http://webservices/OperacionesTropas/eliminarTropasOfensivasRequest", output = "http://webservices/OperacionesTropas/eliminarTropasOfensivasResponse")
+    public boolean eliminarTropasOfensivas(
         @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario,
-        @WebParam(name = "tipoTropa", targetNamespace = "")
-        String tipoTropa);
+        String emailUsuario);
 
     /**
      * 
@@ -104,24 +92,6 @@ public interface OperacionesTropas {
 
     /**
      * 
-     * @param emailUsuario
-     * @param tipoTropa
-     * @return
-     *     returns operacionesTropas_WS.TropaAtaque
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getTropaAtaque", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaAtaque")
-    @ResponseWrapper(localName = "getTropaAtaqueResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaAtaqueResponse")
-    @Action(input = "http://webservices/OperacionesTropas/getTropaAtaqueRequest", output = "http://webservices/OperacionesTropas/getTropaAtaqueResponse")
-    public TropaAtaque getTropaAtaque(
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario,
-        @WebParam(name = "tipoTropa", targetNamespace = "")
-        String tipoTropa);
-
-    /**
-     * 
      * @param email
      * @param tipo
      * @return
@@ -141,41 +111,32 @@ public interface OperacionesTropas {
     /**
      * 
      * @param email
-     * @param tipo
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "mejorarTropaDefensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarTropaDefensiva")
-    @ResponseWrapper(localName = "mejorarTropaDefensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarTropaDefensivaResponse")
-    @Action(input = "http://webservices/OperacionesTropas/mejorarTropaDefensivaRequest", output = "http://webservices/OperacionesTropas/mejorarTropaDefensivaResponse")
-    public boolean mejorarTropaDefensiva(
+    @RequestWrapper(localName = "mejorarFabricaOfensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaOfensiva")
+    @ResponseWrapper(localName = "mejorarFabricaOfensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaOfensivaResponse")
+    @Action(input = "http://webservices/OperacionesTropas/mejorarFabricaOfensivaRequest", output = "http://webservices/OperacionesTropas/mejorarFabricaOfensivaResponse")
+    public boolean mejorarFabricaOfensiva(
         @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "tipo", targetNamespace = "")
-        String tipo);
+        String email);
 
     /**
      * 
      * @param email
-     * @param tipo
-     * @param unidades
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "agregarTropasDefensivas", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.AgregarTropasDefensivas")
-    @ResponseWrapper(localName = "agregarTropasDefensivasResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.AgregarTropasDefensivasResponse")
-    @Action(input = "http://webservices/OperacionesTropas/agregarTropasDefensivasRequest", output = "http://webservices/OperacionesTropas/agregarTropasDefensivasResponse")
-    public boolean agregarTropasDefensivas(
+    @RequestWrapper(localName = "mejorarFabricaDefensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaDefensiva")
+    @ResponseWrapper(localName = "mejorarFabricaDefensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarFabricaDefensivaResponse")
+    @Action(input = "http://webservices/OperacionesTropas/mejorarFabricaDefensivaRequest", output = "http://webservices/OperacionesTropas/mejorarFabricaDefensivaResponse")
+    public boolean mejorarFabricaDefensiva(
         @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "tipo", targetNamespace = "")
-        String tipo,
-        @WebParam(name = "unidades", targetNamespace = "")
-        int unidades);
+        String email);
 
     /**
      * 
@@ -200,17 +161,56 @@ public interface OperacionesTropas {
 
     /**
      * 
-     * @param emailUsuario
+     * @param email
+     * @param tipo
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "eliminarTropasOfensivas", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.EliminarTropasOfensivas")
-    @ResponseWrapper(localName = "eliminarTropasOfensivasResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.EliminarTropasOfensivasResponse")
-    @Action(input = "http://webservices/OperacionesTropas/eliminarTropasOfensivasRequest", output = "http://webservices/OperacionesTropas/eliminarTropasOfensivasResponse")
-    public boolean eliminarTropasOfensivas(
+    @RequestWrapper(localName = "mejorarTropaDefensiva", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarTropaDefensiva")
+    @ResponseWrapper(localName = "mejorarTropaDefensivaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.MejorarTropaDefensivaResponse")
+    @Action(input = "http://webservices/OperacionesTropas/mejorarTropaDefensivaRequest", output = "http://webservices/OperacionesTropas/mejorarTropaDefensivaResponse")
+    public boolean mejorarTropaDefensiva(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "tipo", targetNamespace = "")
+        String tipo);
+
+    /**
+     * 
+     * @param emailUsuario
+     * @param tipoTropa
+     * @return
+     *     returns operacionesTropas_WS.TropaAtaque
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getTropaAtaque", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaAtaque")
+    @ResponseWrapper(localName = "getTropaAtaqueResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaAtaqueResponse")
+    @Action(input = "http://webservices/OperacionesTropas/getTropaAtaqueRequest", output = "http://webservices/OperacionesTropas/getTropaAtaqueResponse")
+    public TropaAtaque getTropaAtaque(
         @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario);
+        String emailUsuario,
+        @WebParam(name = "tipoTropa", targetNamespace = "")
+        String tipoTropa);
+
+    /**
+     * 
+     * @param emailUsuario
+     * @param tipoTropa
+     * @return
+     *     returns operacionesTropas_WS.TropaDefensa
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getTropaDefensa", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaDefensa")
+    @ResponseWrapper(localName = "getTropaDefensaResponse", targetNamespace = "http://webservices/", className = "operacionesTropas_WS.GetTropaDefensaResponse")
+    @Action(input = "http://webservices/OperacionesTropas/getTropaDefensaRequest", output = "http://webservices/OperacionesTropas/getTropaDefensaResponse")
+    public TropaDefensa getTropaDefensa(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario,
+        @WebParam(name = "tipoTropa", targetNamespace = "")
+        String tipoTropa);
 
 }

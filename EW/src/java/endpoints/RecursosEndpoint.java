@@ -59,14 +59,11 @@ public class RecursosEndpoint {
                     @Override
                     public void run() {
                         ClienteRecursosMinas crm = new ClienteRecursosMinas();
-                        System.out.println("email: " + email);                     
                         
                         int recursos = crm.obtenerRecursos(email);
                         String recursoString = Integer.toString(recursos);
                         try {
-                            System.out.println("RECURSOSOSOSOSOSOSOS: " + recursoString);
                             peer.getBasicRemote().sendText(recursoString);
-                            System.out.println("actualizados recursos");
                         } catch (IOException ex) {
                             Logger.getLogger(RecursosEndpoint.class.getName()).log(Level.SEVERE, null, ex);
                         }

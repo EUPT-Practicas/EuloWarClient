@@ -30,7 +30,6 @@ public class GestorThreads {
     }
     
     public void crearThreadRecursosMina(Mina m){
-        System.out.println("CREANDO UN THREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD!!!!");
         poolThreads.execute(new RecursosMina(m));
     }
     

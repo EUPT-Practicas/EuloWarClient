@@ -27,18 +27,18 @@ public interface OperacionesCampamento {
 
     /**
      * 
-     * @param name
+     * @param idCampamento
      * @return
-     *     returns java.lang.String
+     *     returns operacionesCampamento_WS.Campamento
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.HelloResponse")
-    @Action(input = "http://webservices/OperacionesCampamento/helloRequest", output = "http://webservices/OperacionesCampamento/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "getCampamento", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.GetCampamento")
+    @ResponseWrapper(localName = "getCampamentoResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.GetCampamentoResponse")
+    @Action(input = "http://webservices/OperacionesCampamento/getCampamentoRequest", output = "http://webservices/OperacionesCampamento/getCampamentoResponse")
+    public Campamento getCampamento(
+        @WebParam(name = "idCampamento", targetNamespace = "")
+        int idCampamento);
 
     /**
      * 
@@ -59,30 +59,48 @@ public interface OperacionesCampamento {
      * 
      * @param emailUsuario
      * @return
-     *     returns java.util.List<java.lang.Object>
+     *     returns java.util.List<operacionesCampamento_WS.Campamento>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "obtenerCampamentos", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.ObtenerCampamentos")
     @ResponseWrapper(localName = "obtenerCampamentosResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.ObtenerCampamentosResponse")
     @Action(input = "http://webservices/OperacionesCampamento/obtenerCampamentosRequest", output = "http://webservices/OperacionesCampamento/obtenerCampamentosResponse")
-    public List<Object> obtenerCampamentos(
+    public List<Campamento> obtenerCampamentos(
         @WebParam(name = "emailUsuario", targetNamespace = "")
         String emailUsuario);
 
     /**
      * 
-     * @param idCampamento
+     * @param posicionesOcupadas
+     * @param emailUsuario
      * @return
-     *     returns operacionesCampamento_WS.Campamento
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCampamento", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.GetCampamento")
-    @ResponseWrapper(localName = "getCampamentoResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.GetCampamentoResponse")
-    @Action(input = "http://webservices/OperacionesCampamento/getCampamentoRequest", output = "http://webservices/OperacionesCampamento/getCampamentoResponse")
-    public Campamento getCampamento(
-        @WebParam(name = "idCampamento", targetNamespace = "")
-        int idCampamento);
+    @RequestWrapper(localName = "agregarTropasCampamento", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.AgregarTropasCampamento")
+    @ResponseWrapper(localName = "agregarTropasCampamentoResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.AgregarTropasCampamentoResponse")
+    @Action(input = "http://webservices/OperacionesCampamento/agregarTropasCampamentoRequest", output = "http://webservices/OperacionesCampamento/agregarTropasCampamentoResponse")
+    public String agregarTropasCampamento(
+        @WebParam(name = "posicionesOcupadas", targetNamespace = "")
+        int posicionesOcupadas,
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
+
+    /**
+     * 
+     * @param emailUsuario
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "reiniciarCampamentos", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.ReiniciarCampamentos")
+    @ResponseWrapper(localName = "reiniciarCampamentosResponse", targetNamespace = "http://webservices/", className = "operacionesCampamento_WS.ReiniciarCampamentosResponse")
+    @Action(input = "http://webservices/OperacionesCampamento/reiniciarCampamentosRequest", output = "http://webservices/OperacionesCampamento/reiniciarCampamentosResponse")
+    public boolean reiniciarCampamentos(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
 
 }

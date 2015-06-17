@@ -32,13 +32,13 @@
 
 <xs:element name="usuario" type="tns:usuario"/>
 
-<xs:complexType name="getMina">
+<xs:complexType name="asignarMina">
 <xs:sequence>
-<xs:element name="idMina" type="xs:int"/>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getMinaResponse">
+<xs:complexType name="asignarMinaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:mina" minOccurs="0"/>
 </xs:sequence>
@@ -46,9 +46,10 @@
 
 <xs:complexType name="mina">
 <xs:sequence>
-<xs:element name="deposito" type="xs:int"/>
+<xs:element name="actualizando" type="xs:int"/>
 <xs:element name="FKMinaRecurso" type="tns:recurso" minOccurs="0"/>
 <xs:element name="FKMinaUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="horaUltimaActualizacion" type="xs:string" minOccurs="0"/>
 <xs:element name="idMina" type="xs:int" minOccurs="0"/>
 <xs:element name="nivelMina" type="xs:int"/>
 <xs:element name="tipoMina" type="xs:string" minOccurs="0"/>
@@ -73,13 +74,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="asignarMina">
+<xs:complexType name="getMina">
 <xs:sequence>
-<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="idMina" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="asignarMinaResponse">
+<xs:complexType name="getMinaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:mina" minOccurs="0"/>
 </xs:sequence>
@@ -117,18 +118,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="obtenerMinas">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="obtenerMinasResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="producirRecursos">
 <xs:sequence>
 <xs:element name="idMina" type="xs:int"/>
@@ -138,6 +127,18 @@
 <xs:complexType name="producirRecursosResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerMinas">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerMinasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

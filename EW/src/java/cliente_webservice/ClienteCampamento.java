@@ -28,12 +28,23 @@ public class ClienteCampamento {
         return port.nuevoCampamento(emailUsuario);
     }
 
-    public java.util.List<java.lang.Object> obtenerCampamentos(java.lang.String emailUsuario) {
+    public String agregarTropasCampamento(int posicionesOcupadas, java.lang.String emailUsuario) {
+        operacionesCampamento_WS.OperacionesCampamento_Service service = new operacionesCampamento_WS.OperacionesCampamento_Service();
+        operacionesCampamento_WS.OperacionesCampamento port = service.getOperacionesCampamentoPort();
+        return port.agregarTropasCampamento(posicionesOcupadas, emailUsuario);
+    }
+
+    public java.util.List<operacionesCampamento_WS.Campamento> obtenerCampamentos(java.lang.String emailUsuario) {
         operacionesCampamento_WS.OperacionesCampamento_Service service = new operacionesCampamento_WS.OperacionesCampamento_Service();
         operacionesCampamento_WS.OperacionesCampamento port = service.getOperacionesCampamentoPort();
         return port.obtenerCampamentos(emailUsuario);
     }
-    
+
+    public boolean reiniciarCampamentos(java.lang.String emailUsuario) {
+        operacionesCampamento_WS.OperacionesCampamento_Service service = new operacionesCampamento_WS.OperacionesCampamento_Service();
+        operacionesCampamento_WS.OperacionesCampamento port = service.getOperacionesCampamentoPort();
+        return port.reiniciarCampamentos(emailUsuario);
+    }
     
     
 }

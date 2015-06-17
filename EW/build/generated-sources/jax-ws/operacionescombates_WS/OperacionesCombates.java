@@ -26,6 +26,21 @@ public interface OperacionesCombates {
 
     /**
      * 
+     * @param email
+     * @return
+     *     returns operacionescombates_WS.Usuario
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "elegirRival", targetNamespace = "http://webservices/", className = "operacionescombates_WS.ElegirRival")
+    @ResponseWrapper(localName = "elegirRivalResponse", targetNamespace = "http://webservices/", className = "operacionescombates_WS.ElegirRivalResponse")
+    @Action(input = "http://webservices/OperacionesCombates/elegirRivalRequest", output = "http://webservices/OperacionesCombates/elegirRivalResponse")
+    public Usuario elegirRival(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
      * @param emailAtacante
      * @param emailDefensor
      * @return
@@ -41,20 +56,5 @@ public interface OperacionesCombates {
         String emailAtacante,
         @WebParam(name = "emailDefensor", targetNamespace = "")
         String emailDefensor);
-
-    /**
-     * 
-     * @param email
-     * @return
-     *     returns operacionescombates_WS.Usuario
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "elegirRival", targetNamespace = "http://webservices/", className = "operacionescombates_WS.ElegirRival")
-    @ResponseWrapper(localName = "elegirRivalResponse", targetNamespace = "http://webservices/", className = "operacionescombates_WS.ElegirRivalResponse")
-    @Action(input = "http://webservices/OperacionesCombates/elegirRivalRequest", output = "http://webservices/OperacionesCombates/elegirRivalResponse")
-    public Usuario elegirRival(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
 
 }

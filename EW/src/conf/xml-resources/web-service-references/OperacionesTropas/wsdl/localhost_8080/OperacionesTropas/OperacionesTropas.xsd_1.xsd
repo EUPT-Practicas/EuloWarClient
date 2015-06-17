@@ -69,6 +69,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="mejorarFabricaOfensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaOfensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="mejorarTropaOfensiva">
 <xs:sequence>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
@@ -77,18 +89,6 @@
 </xs:complexType>
 
 <xs:complexType name="mejorarTropaOfensivaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarFabricaOfensiva">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarFabricaOfensivaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -202,6 +202,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="mejorarFabricaDefensiva">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarFabricaDefensivaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="agregarTropasDefensivas">
 <xs:sequence>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
@@ -211,18 +223,6 @@
 </xs:complexType>
 
 <xs:complexType name="agregarTropasDefensivasResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarFabricaDefensiva">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarFabricaDefensivaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://webservices/}campamento" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class ObtenerCampamentosResponse {
 
     @XmlElement(name = "return")
-    protected List<Object> _return;
+    protected List<Campamento> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class ObtenerCampamentosResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Object }
+     * {@link Campamento }
      * 
      * 
      */
-    public List<Object> getReturn() {
+    public List<Campamento> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Object>();
+            _return = new ArrayList<Campamento>();
         }
         return this._return;
     }

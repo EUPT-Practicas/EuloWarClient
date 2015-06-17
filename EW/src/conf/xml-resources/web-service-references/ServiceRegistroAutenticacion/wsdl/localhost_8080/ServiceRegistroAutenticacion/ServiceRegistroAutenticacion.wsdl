@@ -4,18 +4,6 @@
 <xsd:import namespace="http://webservices/" schemaLocation="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="comprobarLogin">
-<part name="parameters" element="tns:comprobarLogin"/>
-</message>
-<message name="comprobarLoginResponse">
-<part name="parameters" element="tns:comprobarLoginResponse"/>
-</message>
-<message name="existeUsuario">
-<part name="parameters" element="tns:existeUsuario"/>
-</message>
-<message name="existeUsuarioResponse">
-<part name="parameters" element="tns:existeUsuarioResponse"/>
-</message>
 <message name="findUser">
 <part name="parameters" element="tns:findUser"/>
 </message>
@@ -28,15 +16,19 @@
 <message name="crearUsuarioResponse">
 <part name="parameters" element="tns:crearUsuarioResponse"/>
 </message>
+<message name="existeUsuario">
+<part name="parameters" element="tns:existeUsuario"/>
+</message>
+<message name="existeUsuarioResponse">
+<part name="parameters" element="tns:existeUsuarioResponse"/>
+</message>
+<message name="comprobarLogin">
+<part name="parameters" element="tns:comprobarLogin"/>
+</message>
+<message name="comprobarLoginResponse">
+<part name="parameters" element="tns:comprobarLoginResponse"/>
+</message>
 <portType name="ServiceRegistroAutenticacion">
-<operation name="comprobarLogin">
-<input wsam:Action="http://webservices/ServiceRegistroAutenticacion/comprobarLoginRequest" message="tns:comprobarLogin"/>
-<output wsam:Action="http://webservices/ServiceRegistroAutenticacion/comprobarLoginResponse" message="tns:comprobarLoginResponse"/>
-</operation>
-<operation name="existeUsuario">
-<input wsam:Action="http://webservices/ServiceRegistroAutenticacion/existeUsuarioRequest" message="tns:existeUsuario"/>
-<output wsam:Action="http://webservices/ServiceRegistroAutenticacion/existeUsuarioResponse" message="tns:existeUsuarioResponse"/>
-</operation>
 <operation name="findUser">
 <input wsam:Action="http://webservices/ServiceRegistroAutenticacion/findUserRequest" message="tns:findUser"/>
 <output wsam:Action="http://webservices/ServiceRegistroAutenticacion/findUserResponse" message="tns:findUserResponse"/>
@@ -45,10 +37,27 @@
 <input wsam:Action="http://webservices/ServiceRegistroAutenticacion/crearUsuarioRequest" message="tns:crearUsuario"/>
 <output wsam:Action="http://webservices/ServiceRegistroAutenticacion/crearUsuarioResponse" message="tns:crearUsuarioResponse"/>
 </operation>
+<operation name="existeUsuario">
+<input wsam:Action="http://webservices/ServiceRegistroAutenticacion/existeUsuarioRequest" message="tns:existeUsuario"/>
+<output wsam:Action="http://webservices/ServiceRegistroAutenticacion/existeUsuarioResponse" message="tns:existeUsuarioResponse"/>
+</operation>
+<operation name="comprobarLogin">
+<input wsam:Action="http://webservices/ServiceRegistroAutenticacion/comprobarLoginRequest" message="tns:comprobarLogin"/>
+<output wsam:Action="http://webservices/ServiceRegistroAutenticacion/comprobarLoginResponse" message="tns:comprobarLoginResponse"/>
+</operation>
 </portType>
 <binding name="ServiceRegistroAutenticacionPortBinding" type="tns:ServiceRegistroAutenticacion">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="comprobarLogin">
+<operation name="findUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="crearUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -66,16 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="findUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="crearUsuario">
+<operation name="comprobarLogin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

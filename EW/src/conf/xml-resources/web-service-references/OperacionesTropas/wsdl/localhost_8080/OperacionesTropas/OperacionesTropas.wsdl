@@ -4,23 +4,17 @@
 <xsd:import namespace="http://webservices/" schemaLocation="http://localhost:8080/OperacionesTropas/OperacionesTropas?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="mejorarFabricaDefensiva">
-<part name="parameters" element="tns:mejorarFabricaDefensiva"/>
+<message name="agregarTropasDefensivas">
+<part name="parameters" element="tns:agregarTropasDefensivas"/>
 </message>
-<message name="mejorarFabricaDefensivaResponse">
-<part name="parameters" element="tns:mejorarFabricaDefensivaResponse"/>
+<message name="agregarTropasDefensivasResponse">
+<part name="parameters" element="tns:agregarTropasDefensivasResponse"/>
 </message>
-<message name="mejorarFabricaOfensiva">
-<part name="parameters" element="tns:mejorarFabricaOfensiva"/>
+<message name="eliminarTropasOfensivas">
+<part name="parameters" element="tns:eliminarTropasOfensivas"/>
 </message>
-<message name="mejorarFabricaOfensivaResponse">
-<part name="parameters" element="tns:mejorarFabricaOfensivaResponse"/>
-</message>
-<message name="getTropaDefensa">
-<part name="parameters" element="tns:getTropaDefensa"/>
-</message>
-<message name="getTropaDefensaResponse">
-<part name="parameters" element="tns:getTropaDefensaResponse"/>
+<message name="eliminarTropasOfensivasResponse">
+<part name="parameters" element="tns:eliminarTropasOfensivasResponse"/>
 </message>
 <message name="getNivelFabricaAtaque">
 <part name="parameters" element="tns:getNivelFabricaAtaque"/>
@@ -34,29 +28,23 @@
 <message name="getNivelFabricaDefensaResponse">
 <part name="parameters" element="tns:getNivelFabricaDefensaResponse"/>
 </message>
-<message name="getTropaAtaque">
-<part name="parameters" element="tns:getTropaAtaque"/>
-</message>
-<message name="getTropaAtaqueResponse">
-<part name="parameters" element="tns:getTropaAtaqueResponse"/>
-</message>
 <message name="mejorarTropaOfensiva">
 <part name="parameters" element="tns:mejorarTropaOfensiva"/>
 </message>
 <message name="mejorarTropaOfensivaResponse">
 <part name="parameters" element="tns:mejorarTropaOfensivaResponse"/>
 </message>
-<message name="mejorarTropaDefensiva">
-<part name="parameters" element="tns:mejorarTropaDefensiva"/>
+<message name="mejorarFabricaOfensiva">
+<part name="parameters" element="tns:mejorarFabricaOfensiva"/>
 </message>
-<message name="mejorarTropaDefensivaResponse">
-<part name="parameters" element="tns:mejorarTropaDefensivaResponse"/>
+<message name="mejorarFabricaOfensivaResponse">
+<part name="parameters" element="tns:mejorarFabricaOfensivaResponse"/>
 </message>
-<message name="agregarTropasDefensivas">
-<part name="parameters" element="tns:agregarTropasDefensivas"/>
+<message name="mejorarFabricaDefensiva">
+<part name="parameters" element="tns:mejorarFabricaDefensiva"/>
 </message>
-<message name="agregarTropasDefensivasResponse">
-<part name="parameters" element="tns:agregarTropasDefensivasResponse"/>
+<message name="mejorarFabricaDefensivaResponse">
+<part name="parameters" element="tns:mejorarFabricaDefensivaResponse"/>
 </message>
 <message name="agregarTropasOfensivas">
 <part name="parameters" element="tns:agregarTropasOfensivas"/>
@@ -64,24 +52,32 @@
 <message name="agregarTropasOfensivasResponse">
 <part name="parameters" element="tns:agregarTropasOfensivasResponse"/>
 </message>
-<message name="eliminarTropasOfensivas">
-<part name="parameters" element="tns:eliminarTropasOfensivas"/>
+<message name="mejorarTropaDefensiva">
+<part name="parameters" element="tns:mejorarTropaDefensiva"/>
 </message>
-<message name="eliminarTropasOfensivasResponse">
-<part name="parameters" element="tns:eliminarTropasOfensivasResponse"/>
+<message name="mejorarTropaDefensivaResponse">
+<part name="parameters" element="tns:mejorarTropaDefensivaResponse"/>
+</message>
+<message name="getTropaAtaque">
+<part name="parameters" element="tns:getTropaAtaque"/>
+</message>
+<message name="getTropaAtaqueResponse">
+<part name="parameters" element="tns:getTropaAtaqueResponse"/>
+</message>
+<message name="getTropaDefensa">
+<part name="parameters" element="tns:getTropaDefensa"/>
+</message>
+<message name="getTropaDefensaResponse">
+<part name="parameters" element="tns:getTropaDefensaResponse"/>
 </message>
 <portType name="OperacionesTropas">
-<operation name="mejorarFabricaDefensiva">
-<input wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaDefensivaRequest" message="tns:mejorarFabricaDefensiva"/>
-<output wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaDefensivaResponse" message="tns:mejorarFabricaDefensivaResponse"/>
+<operation name="agregarTropasDefensivas">
+<input wsam:Action="http://webservices/OperacionesTropas/agregarTropasDefensivasRequest" message="tns:agregarTropasDefensivas"/>
+<output wsam:Action="http://webservices/OperacionesTropas/agregarTropasDefensivasResponse" message="tns:agregarTropasDefensivasResponse"/>
 </operation>
-<operation name="mejorarFabricaOfensiva">
-<input wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaOfensivaRequest" message="tns:mejorarFabricaOfensiva"/>
-<output wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaOfensivaResponse" message="tns:mejorarFabricaOfensivaResponse"/>
-</operation>
-<operation name="getTropaDefensa">
-<input wsam:Action="http://webservices/OperacionesTropas/getTropaDefensaRequest" message="tns:getTropaDefensa"/>
-<output wsam:Action="http://webservices/OperacionesTropas/getTropaDefensaResponse" message="tns:getTropaDefensaResponse"/>
+<operation name="eliminarTropasOfensivas">
+<input wsam:Action="http://webservices/OperacionesTropas/eliminarTropasOfensivasRequest" message="tns:eliminarTropasOfensivas"/>
+<output wsam:Action="http://webservices/OperacionesTropas/eliminarTropasOfensivasResponse" message="tns:eliminarTropasOfensivasResponse"/>
 </operation>
 <operation name="getNivelFabricaAtaque">
 <input wsam:Action="http://webservices/OperacionesTropas/getNivelFabricaAtaqueRequest" message="tns:getNivelFabricaAtaque"/>
@@ -91,34 +87,38 @@
 <input wsam:Action="http://webservices/OperacionesTropas/getNivelFabricaDefensaRequest" message="tns:getNivelFabricaDefensa"/>
 <output wsam:Action="http://webservices/OperacionesTropas/getNivelFabricaDefensaResponse" message="tns:getNivelFabricaDefensaResponse"/>
 </operation>
-<operation name="getTropaAtaque">
-<input wsam:Action="http://webservices/OperacionesTropas/getTropaAtaqueRequest" message="tns:getTropaAtaque"/>
-<output wsam:Action="http://webservices/OperacionesTropas/getTropaAtaqueResponse" message="tns:getTropaAtaqueResponse"/>
-</operation>
 <operation name="mejorarTropaOfensiva">
 <input wsam:Action="http://webservices/OperacionesTropas/mejorarTropaOfensivaRequest" message="tns:mejorarTropaOfensiva"/>
 <output wsam:Action="http://webservices/OperacionesTropas/mejorarTropaOfensivaResponse" message="tns:mejorarTropaOfensivaResponse"/>
 </operation>
-<operation name="mejorarTropaDefensiva">
-<input wsam:Action="http://webservices/OperacionesTropas/mejorarTropaDefensivaRequest" message="tns:mejorarTropaDefensiva"/>
-<output wsam:Action="http://webservices/OperacionesTropas/mejorarTropaDefensivaResponse" message="tns:mejorarTropaDefensivaResponse"/>
+<operation name="mejorarFabricaOfensiva">
+<input wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaOfensivaRequest" message="tns:mejorarFabricaOfensiva"/>
+<output wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaOfensivaResponse" message="tns:mejorarFabricaOfensivaResponse"/>
 </operation>
-<operation name="agregarTropasDefensivas">
-<input wsam:Action="http://webservices/OperacionesTropas/agregarTropasDefensivasRequest" message="tns:agregarTropasDefensivas"/>
-<output wsam:Action="http://webservices/OperacionesTropas/agregarTropasDefensivasResponse" message="tns:agregarTropasDefensivasResponse"/>
+<operation name="mejorarFabricaDefensiva">
+<input wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaDefensivaRequest" message="tns:mejorarFabricaDefensiva"/>
+<output wsam:Action="http://webservices/OperacionesTropas/mejorarFabricaDefensivaResponse" message="tns:mejorarFabricaDefensivaResponse"/>
 </operation>
 <operation name="agregarTropasOfensivas">
 <input wsam:Action="http://webservices/OperacionesTropas/agregarTropasOfensivasRequest" message="tns:agregarTropasOfensivas"/>
 <output wsam:Action="http://webservices/OperacionesTropas/agregarTropasOfensivasResponse" message="tns:agregarTropasOfensivasResponse"/>
 </operation>
-<operation name="eliminarTropasOfensivas">
-<input wsam:Action="http://webservices/OperacionesTropas/eliminarTropasOfensivasRequest" message="tns:eliminarTropasOfensivas"/>
-<output wsam:Action="http://webservices/OperacionesTropas/eliminarTropasOfensivasResponse" message="tns:eliminarTropasOfensivasResponse"/>
+<operation name="mejorarTropaDefensiva">
+<input wsam:Action="http://webservices/OperacionesTropas/mejorarTropaDefensivaRequest" message="tns:mejorarTropaDefensiva"/>
+<output wsam:Action="http://webservices/OperacionesTropas/mejorarTropaDefensivaResponse" message="tns:mejorarTropaDefensivaResponse"/>
+</operation>
+<operation name="getTropaAtaque">
+<input wsam:Action="http://webservices/OperacionesTropas/getTropaAtaqueRequest" message="tns:getTropaAtaque"/>
+<output wsam:Action="http://webservices/OperacionesTropas/getTropaAtaqueResponse" message="tns:getTropaAtaqueResponse"/>
+</operation>
+<operation name="getTropaDefensa">
+<input wsam:Action="http://webservices/OperacionesTropas/getTropaDefensaRequest" message="tns:getTropaDefensa"/>
+<output wsam:Action="http://webservices/OperacionesTropas/getTropaDefensaResponse" message="tns:getTropaDefensaResponse"/>
 </operation>
 </portType>
 <binding name="OperacionesTropasPortBinding" type="tns:OperacionesTropas">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="mejorarFabricaDefensiva">
+<operation name="agregarTropasDefensivas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -127,16 +127,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="mejorarFabricaOfensiva">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getTropaDefensa">
+<operation name="eliminarTropasOfensivas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -163,15 +154,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getTropaAtaque">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="mejorarTropaOfensiva">
 <soap:operation soapAction=""/>
 <input>
@@ -181,7 +163,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="mejorarTropaDefensiva">
+<operation name="mejorarFabricaOfensiva">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -190,7 +172,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="agregarTropasDefensivas">
+<operation name="mejorarFabricaDefensiva">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -208,7 +190,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarTropasOfensivas">
+<operation name="mejorarTropaDefensiva">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTropaAtaque">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTropaDefensa">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

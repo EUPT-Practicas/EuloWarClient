@@ -29,6 +29,24 @@ public interface OperacionesRecursos {
      * @param email
      * @param unidades
      * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "sumarRecursos", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.SumarRecursos")
+    @ResponseWrapper(localName = "sumarRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.SumarRecursosResponse")
+    @Action(input = "http://webservices/OperacionesRecursos/sumarRecursosRequest", output = "http://webservices/OperacionesRecursos/sumarRecursosResponse")
+    public boolean sumarRecursos(
+        @WebParam(name = "unidades", targetNamespace = "")
+        int unidades,
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
+     * @param email
+     * @param unidades
+     * @return
      *     returns java.lang.String
      */
     @WebMethod
@@ -54,24 +72,6 @@ public interface OperacionesRecursos {
     @ResponseWrapper(localName = "obtenerRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.ObtenerRecursosResponse")
     @Action(input = "http://webservices/OperacionesRecursos/obtenerRecursosRequest", output = "http://webservices/OperacionesRecursos/obtenerRecursosResponse")
     public Integer obtenerRecursos(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
-
-    /**
-     * 
-     * @param email
-     * @param unidades
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sumarRecursos", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.SumarRecursos")
-    @ResponseWrapper(localName = "sumarRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesRecursos_WS.SumarRecursosResponse")
-    @Action(input = "http://webservices/OperacionesRecursos/sumarRecursosRequest", output = "http://webservices/OperacionesRecursos/sumarRecursosResponse")
-    public boolean sumarRecursos(
-        @WebParam(name = "unidades", targetNamespace = "")
-        int unidades,
         @WebParam(name = "email", targetNamespace = "")
         String email);
 

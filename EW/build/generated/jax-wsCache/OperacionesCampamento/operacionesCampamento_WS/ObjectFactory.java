@@ -25,13 +25,15 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _ObtenerCampamentosResponse_QNAME = new QName("http://webservices/", "obtenerCampamentosResponse");
+    private final static QName _ReiniciarCampamentos_QNAME = new QName("http://webservices/", "reiniciarCampamentos");
     private final static QName _NuevoCampamentoResponse_QNAME = new QName("http://webservices/", "nuevoCampamentoResponse");
     private final static QName _Campamento_QNAME = new QName("http://webservices/", "campamento");
+    private final static QName _AgregarTropasCampamentoResponse_QNAME = new QName("http://webservices/", "agregarTropasCampamentoResponse");
     private final static QName _NuevoCampamento_QNAME = new QName("http://webservices/", "nuevoCampamento");
-    private final static QName _HelloResponse_QNAME = new QName("http://webservices/", "helloResponse");
+    private final static QName _AgregarTropasCampamento_QNAME = new QName("http://webservices/", "agregarTropasCampamento");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
     private final static QName _GetCampamento_QNAME = new QName("http://webservices/", "getCampamento");
-    private final static QName _Hello_QNAME = new QName("http://webservices/", "hello");
+    private final static QName _ReiniciarCampamentosResponse_QNAME = new QName("http://webservices/", "reiniciarCampamentosResponse");
     private final static QName _GetCampamentoResponse_QNAME = new QName("http://webservices/", "getCampamentoResponse");
     private final static QName _ObtenerCampamentos_QNAME = new QName("http://webservices/", "obtenerCampamentos");
 
@@ -40,14 +42,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Hello }
-     * 
-     */
-    public Hello createHello() {
-        return new Hello();
     }
 
     /**
@@ -67,6 +61,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReiniciarCampamentosResponse }
+     * 
+     */
+    public ReiniciarCampamentosResponse createReiniciarCampamentosResponse() {
+        return new ReiniciarCampamentosResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCampamento }
      * 
      */
@@ -83,11 +85,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HelloResponse }
+     * Create an instance of {@link AgregarTropasCampamento }
      * 
      */
-    public HelloResponse createHelloResponse() {
-        return new HelloResponse();
+    public AgregarTropasCampamento createAgregarTropasCampamento() {
+        return new AgregarTropasCampamento();
+    }
+
+    /**
+     * Create an instance of {@link AgregarTropasCampamentoResponse }
+     * 
+     */
+    public AgregarTropasCampamentoResponse createAgregarTropasCampamentoResponse() {
+        return new AgregarTropasCampamentoResponse();
     }
 
     /**
@@ -104,6 +114,14 @@ public class ObjectFactory {
      */
     public Campamento createCampamento() {
         return new Campamento();
+    }
+
+    /**
+     * Create an instance of {@link ReiniciarCampamentos }
+     * 
+     */
+    public ReiniciarCampamentos createReiniciarCampamentos() {
+        return new ReiniciarCampamentos();
     }
 
     /**
@@ -132,6 +150,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReiniciarCampamentos }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "reiniciarCampamentos")
+    public JAXBElement<ReiniciarCampamentos> createReiniciarCampamentos(ReiniciarCampamentos value) {
+        return new JAXBElement<ReiniciarCampamentos>(_ReiniciarCampamentos_QNAME, ReiniciarCampamentos.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link NuevoCampamentoResponse }{@code >}}
      * 
      */
@@ -150,6 +177,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarTropasCampamentoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "agregarTropasCampamentoResponse")
+    public JAXBElement<AgregarTropasCampamentoResponse> createAgregarTropasCampamentoResponse(AgregarTropasCampamentoResponse value) {
+        return new JAXBElement<AgregarTropasCampamentoResponse>(_AgregarTropasCampamentoResponse_QNAME, AgregarTropasCampamentoResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link NuevoCampamento }{@code >}}
      * 
      */
@@ -159,12 +195,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarTropasCampamento }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "helloResponse")
-    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
-        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://webservices/", name = "agregarTropasCampamento")
+    public JAXBElement<AgregarTropasCampamento> createAgregarTropasCampamento(AgregarTropasCampamento value) {
+        return new JAXBElement<AgregarTropasCampamento>(_AgregarTropasCampamento_QNAME, AgregarTropasCampamento.class, null, value);
     }
 
     /**
@@ -186,12 +222,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReiniciarCampamentosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "hello")
-    public JAXBElement<Hello> createHello(Hello value) {
-        return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
+    @XmlElementDecl(namespace = "http://webservices/", name = "reiniciarCampamentosResponse")
+    public JAXBElement<ReiniciarCampamentosResponse> createReiniciarCampamentosResponse(ReiniciarCampamentosResponse value) {
+        return new JAXBElement<ReiniciarCampamentosResponse>(_ReiniciarCampamentosResponse_QNAME, ReiniciarCampamentosResponse.class, null, value);
     }
 
     /**

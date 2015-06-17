@@ -42,7 +42,6 @@ public class RecursosMina implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("mina de: " + mina.getFKMinaUsuario());
         actualizarRecursos();
     }
 

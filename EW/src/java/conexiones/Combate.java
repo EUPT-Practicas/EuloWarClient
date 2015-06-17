@@ -5,6 +5,7 @@
  */
 package conexiones;
 
+import cliente_webservice.ClienteCampamento;
 import cliente_webservice.ClienteCombates;
 import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteTropas;
@@ -44,17 +45,22 @@ public class Combate extends HttpServlet {
             clientes_WS.Usuario usuario = (clientes_WS.Usuario) miSession.getAttribute("usuario");
             String emailUsuario = usuario.getEmail();
 
+            System.out.println("GRIJANDOR");
             ClienteCombates cc = new ClienteCombates();
             Usuario rival = cc.elegirRival(emailUsuario);
             String emailRival = rival.getEmail();
             Usuario ganador = cc.simularCombate(emailUsuario, emailRival);
             String emailGanador = ganador.getEmail();
+            System.out.println("RIVALVALVAL: " + emailRival);
 
             ClienteTropas ct = new ClienteTropas();
             ct.eliminarTropasOfensivas(emailUsuario);
+            ClienteCampamento ccampamentos = new ClienteCampamento();
+            ccampamentos.reiniciarCampamentos(emailUsuario);
 
             ClienteRecursosMinas crm = new ClienteRecursosMinas();
             int recursosRival = crm.obtenerRecursos(emailRival);
+            System.out.println("Y SU GANADOR EEEEEEEEES: " + emailGanador);
 
             if (emailGanador.equals(emailUsuario)) {
                 System.out.println("HAS GANADO!!");
