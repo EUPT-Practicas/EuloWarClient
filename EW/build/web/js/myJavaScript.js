@@ -51,9 +51,9 @@ function mejorarMina(_idMina) {
     });
 }
 
-function lanzarAtaque(){
+function lanzarAtaque() {
     console.log("LANZAR ATAQUE");
-        $.ajax({
+    $.ajax({
         type: "POST",
         url: "Combate",
         success: function (msg) {
@@ -79,8 +79,8 @@ function mejorarFabricaDefensa(_nivelFabrica) {
         type: "POST",
         url: "MejorarDefensa", //por hacer
         data: "nivelFabrica=" + _nivelFabrica,
-        success: function (msg){
-            
+        success: function (msg) {
+
         }
     });
     //setContador();
@@ -93,6 +93,21 @@ function comprarTropasOfensivas(_tipoTropa) {
         url: "ComprarTropasAtaque",
         data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
         success: function (msg) {
+            //num = document.getElementById("tropasAdquiridas").value + document.getElementById("numTropasSpinner").value;
+            num = parseInt(document.getElementById("tropasAdquiridas").value) + parseInt(document.getElementById("numTropasSpinner").value);
+            console.log("NUM: " + num);
+            console.log("tipo tropa: " + _tipoTropa);
+            if (_tipoTropa === "PELOTON") {
+                $('#peloton').empty();
+                $('#peloton').html('(' + num + ')');
+            }
+
+            if (_tipoTropa === "VEHICULO_BLINDADO") {
+                console.log("VEHICULOOO");
+                $('#vehiculoBlindado').empty();
+                $('#vehiculoBlindado').html('(' + num + ')');
+            }
+
         }
     });
 }
@@ -104,7 +119,7 @@ function comprarTropasDefensivas(_tipoTropa) {
         url: "ComprarTropasDefensa", //por hacer
         data: "tipoTropa=" + _tipoTropa + "&numTropas=" + document.getElementById("numTropasSpinner").value,
         success: function (msg) {
-            
+
         }
     });
 }
@@ -157,7 +172,13 @@ function mostrarErrorLogin(_mensaje, _tipo) {
     }
 }
 
+function recargaPagina(_mensaje) {
+    document.location.reload(true);
+    mostrarErrorRecursos(_mensaje);
+}
+
 function mostrarErrorRecursos(_mensaje) {
+    console.log("ERROR RECURSOS");
     if (_mensaje !== null && _mensaje !== '') {
         alert(_mensaje);
     }

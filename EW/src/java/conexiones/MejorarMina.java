@@ -57,7 +57,8 @@ public class MejorarMina extends HttpServlet {
             String resultado = crm.restarRecursos(crm.obtenerNivelMina(nivelActualizar).getPrecio(), email);
             switch (resultado) {
                 case "INSUFICIENTES_RECURSOS":
-                    String mensaje = "No hay recursos suficientes. Se requieren: " + crm.obtenerNivelMina(nivelActualizar).getPrecio();
+                    System.out.println("NO RECURSOS MENSAJES ------------------");
+                    String mensaje = "No hay recursos suficientes MEJORAR MINA. Se requieren: " + crm.obtenerNivelMina(nivelActualizar).getPrecio();
                     request.setAttribute("mensaje", mensaje);
                     request.getRequestDispatcher("minas.jsp").forward(request, response);
                     break;

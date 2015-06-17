@@ -153,7 +153,7 @@
                 <div class="col-md-2 col-md-offset-0">
                     <a href="#" onclick="setInfoAtaque('peloton', <%= nivel%>);">
                         <img src="img/ataque/peloton.png" class="img-responsive" alt="Peloton">
-                        <h5 class="text-center">Peloton (<%= numPeloton%>) </h5>
+                        <h5 class="text-center" >Peloton <b id="peloton">(<%= numPeloton%>)</b> </h5>
                     </a>
                 </div>
 
@@ -161,7 +161,8 @@
                     <% if (nivel > 1) {%>
                     <a href="#" onclick="setInfoAtaque('vehiculoBlindado', <%= nivel%>);">
                         <img src="img/ataque/vehiculoblindado.png" class="img-responsive" alt="Hehiculo Blindado">
-                        <h5 class="text-center">Vehículo Blindado (<%= numVehiculoBlindado%>) </h5>
+                        <!--<h5 class="text-center">Vehículo Blindado (<%= numVehiculoBlindado%>) </h5>-->
+                        <h5 class="text-center" >Vehículo Blindado <b id="vehiculoBlindado">(<%= numVehiculoBlindado%>)</b> </h5>
                     </a>
                     <%} else {%>
                     <img src="img/ataque/vehiculoblindadoDisabled.png" class="img-responsive" alt="Hehiculo Blindado">

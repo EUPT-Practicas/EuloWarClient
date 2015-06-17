@@ -118,13 +118,16 @@ public class ComprarTropasAtaque extends HttpServlet {
 
                     ClienteTropas ct = new ClienteTropas();
                     ct.agregarTropasOfensivas(email, tipoTropa, numTropas);
+                    out.println("RIVHIIIIII");
 
                     response.sendRedirect("ataque.jsp");
+
+
                     
+
                     /////////////////////////////////////////////
                     //PONER UN MENSAJE DE QUE SE CREAN LAS TROPAS
                     /////////////////////////////////////////////
-
                     System.out.println("Comprando tropas ataque: " + numTropas + "  .  " + tipoTropa);
 
                 }

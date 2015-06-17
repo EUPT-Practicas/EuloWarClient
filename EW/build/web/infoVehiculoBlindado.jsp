@@ -10,39 +10,24 @@
 <%
     HttpSession miSesion = request.getSession(false);
 
-    if (((String) miSesion.getAttribute("auth")) != "OK") {
-        System.err.println("AUTH != OK : " + (String) miSesion.getAttribute("auth"));
+if(((String) miSesion.getAttribute("auth")) != "OK"){
+    System.err.println("AUTH != OK : " + (String) miSesion.getAttribute("auth"));
 //    String mensaje = "La session ha expirado.";
 //                request.setAttribute("mensaje", mensaje);
 //                request.setAttribute("tipo", "reg");
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
 
-    }
+}
 
     Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
 
     String nombreUsuario = usuario.getNombreUsuario();
     String email = usuario.getEmail();
-    String nivelF = request.getParameter("nivelF");
+        String nivelF = request.getParameter("nivelF");
     ClienteTropas ct = new ClienteTropas();
-    int nivel = ct.getNivelFabricaAtaque(email);
-    System.err.println("nivel F: " + nivel);
-//    String nivelActualmina = request.getParameter("input");
-//    String output = request.getParameter("output");
-//    int idMina = Integer.valueOf(request.getParameter("IdRambo"));
-//
-//    String ganancia = "¡La mina no puede ser mejorada más!";
-//    String tiempo = "--";
-//    String coste = "--";
-
-//    ClienteRecursosMinas crm = new ClienteRecursosMinas();
-//    if (Integer.valueOf(nivelActualmina) <= 5) {
-//        NivelMina nm = crm.obtenerNivelMina(Integer.valueOf(nivelActualmina) + 1);
-//
-//        ganancia = "" + nm.getGanancia();
-//        tiempo = "" + 30;
-//        coste = "" + nm.getPrecio();
-//    }
+                int nivel = ct.getNivelFabricaAtaque(email);
+                System.err.println("nivel F: " + nivel);
+                int numPeloton = ct.getTropaAtaque(email, "VEHICULO_BLINDADO").getUnidades();
 %>
 <script src="./js/myJavaScript.js"></script>
 <div class="col-md-1 col-md-offset-11 text-right">
@@ -72,7 +57,8 @@
             <h5 class="">Coste de mejora: 5.000 Hierro</h5>
         </div>
         <div class="row text-center">
-            <h5 class=""><b>Nº Tropas adquiridas:</b> 55</h5>
+            <h5 class=""><b>Nº Tropas adquiridas:</b> <%= numPeloton%></h5>
+            <input type="hidden" id="tropasAdquiridas" value="<%= numPeloton%>" />
         </div>
         <div class="panel  col-md-9 col-md-offset-1">
             <div class="col-md-6 col-md-offset-0">

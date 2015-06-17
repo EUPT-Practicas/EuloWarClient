@@ -101,6 +101,7 @@ public class ComprarTropasDefensa extends HttpServlet {
                     /////////////////////////////////////////////
 
                 response.sendRedirect("defensa.jsp");
+                response.setHeader("REFRESH", "0");
             }
 
         }

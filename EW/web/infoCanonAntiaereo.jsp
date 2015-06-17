@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="cliente_webservice.ClienteTropas"%>
-<%@page import="operacionesminas_client.Usuario"%>
+<%@page import="clientes_WS.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
         HttpSession miSesion = request.getSession(false);

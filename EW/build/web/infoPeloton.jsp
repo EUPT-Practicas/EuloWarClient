@@ -74,6 +74,7 @@ if(((String) miSesion.getAttribute("auth")) != "OK"){
         </div>
         <div class="row text-center">
             <h5 class=""><b>Nº Tropas adquiridas:</b> <%= numPeloton%></h5>
+            <input type="hidden" id="tropasAdquiridas" value="<%= numPeloton%>" />
         </div>
         <div class="panel  col-md-9 col-md-offset-1">
             <div class="col-md-6 col-md-offset-0">

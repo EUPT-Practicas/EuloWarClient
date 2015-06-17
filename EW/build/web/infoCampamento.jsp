@@ -28,7 +28,7 @@
 %>
 <script src="./js/myJavaScript.js"></script>
 <div class="col-md-1 col-md-offset-11 text-right">
-    <h5><strong>Nivel: C</strong></h5>
+<!--    <h5><strong>Nivel: C</strong></h5>-->
 </div> 
 <div class="col-md-5 col-md-offset-0">
     <img src="img/campamento/ArmyCamp.png" class="img-responsive " alt="Información de Campamento">
@@ -45,7 +45,7 @@
         </div>
         <div class="row">
 <!--            <h5 class="">Mejora de defensa: --</h5>-->
-            <h5 class="">Aporta: 200 tropas</h5>
+            <h5 class="">Aporta: 250 tropas</h5>
         </div>
 <!--        <div class="row">
             <h5 class="">Tiempo de mejora: --</h5>
